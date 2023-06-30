@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   z-index: 10000;
+
   .rotating-image {
     width: 250px;
     height: 250px;
@@ -21,6 +22,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

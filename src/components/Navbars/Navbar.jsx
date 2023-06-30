@@ -1,9 +1,8 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react';
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
     const navigator = useNavigate();
-
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
@@ -67,6 +66,5 @@ export default function Navbar() {
                 </div>
             </div>
         </nav>
-
     )
 }

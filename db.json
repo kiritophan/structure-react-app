@@ -1,8 +1,18 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "kirito phan"
-        }
-    ]
+  "users": [
+    {
+      "name": "phuc",
+      "email": "phuc@gmail.com",
+      "phoneNumber": "0999222232",
+      "block": false,
+      "id": 1
+    },
+    {
+      "name": "anh khoa",
+      "email": "asdad@gmail.com",
+      "phoneNumber": "112123123",
+      "block": true,
+      "id": 2
+    }
+  ]
 }

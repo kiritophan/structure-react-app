@@ -7,3 +7,5 @@ SCSS: https://www.npmjs.com/package/sass
 Json-server: https://www.npmjs.com/package/json-server
 
 route Dom: https://www.npmjs.com/package/react-router-dom
+
+react-toolkit: https://www.npmjs.com/package/@reduxjs/toolkit
