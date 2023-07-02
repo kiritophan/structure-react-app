@@ -1,77 +1,70 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
-import { counterActions } from '@stores/slices/counter.slice';
-import Loading from "@components/Loadings/Loading";
-import UserForm from '@components/UserForms/UserForm';
-
+import { useDispatch, useSelector } from 'react-redux'
+import {counterActions} from '@stores/slices/counter.slice'
+import Loading from '@components/Loadings/Loading'
+import UserForm from '@components/UserForms/UserForm'
 export default function About() {
   const dispatch = useDispatch();
   const counterStore = useSelector(store => store.counterStore)
-  const [dataForm, setDataForm] = useState(null)
 
   useEffect(() => {
     dispatch(counterActions.findAllUsers())
   }, [])
 
-  useEffect(() => {
-    console.log("counterStore.users", counterStore.users)
-  }, [counterStore.users])
-
-  // control userform
+  // điều khiển user form
   const [showUserForm, setShowUserForm] = useState(false);
+  const [dataForm, setDataForm] = useState(null);
   return (
     <div>
       {
-        counterStore.loading ? <Loading /> : <></>
+        counterStore.loading ? <Loading/> : <></>
       }
       {
         showUserForm ? <UserForm dataForm={dataForm}></UserForm> : <></>
       }
-      <h1>About Page </h1>
-      <button className="btn btn-primary" onClick={() => {
+      <h1>About Page</h1>
+      <button onClick={() => {
         setShowUserForm(true)
         setDataForm({
           functionCloseForm: setShowUserForm,
-          type: 'add',
-          functionSubmit: counterActions.createNewUsers
+          type: 'add', // loại form: add: thêm, update: cập nhật
+          functionSubmit: counterActions.createNewUsers,
+          preData: null
         })
-      }}>Add new user</button>
+      }} type="button" className="btn btn-info">Add New</button>
       <br></br>
       {
-        counterStore.users.map((user) =>
+        counterStore.users.map((user) => 
           <Fragment key={user.id}>
-            <div onContextMenu={(e) => { //huy hanh vi mac dinh cua chuot phai
-              e.preventDefault()
-              dispatch(counterActions.setStatusUser({
-                userId: user.id,
-                patchData: {
-                  block: !user.block
+            <div onContextMenu={(e) => {
+              e.preventDefault() // hủy hành vi mặc định của chuột phải
+              dispatch(counterActions.setStatusUser(
+                {
+                  userId: user.id,
+                  patchData: {
+                    block: !user.block
+                  }
                 }
-              }))
-            }}  style={{textDecoration: user.block ? 'line-through' : ""}}> UserId: {user.id}
-              <br /> UserName:{user.name}
-              <br />UserEmail:{user.email}
-              <br />UserPhoneNumber:{user.phoneNumber}
-            </div>
-            <button style={{ marginRight: '10px' }} onClick={() => {
-              dispatch(counterActions.deleteUserByID(user.id))
+              ))
+            }} style={{textDecoration: user.block ? "line-through" : ""}}>UserName: {user.name}, UserId: {user.id}, UserEmail: {user.email}, User Phone Number: {user.phoneNumber}</div>
+            <button onClick={() => {
+              console.log("delete", user.id)
+              dispatch(counterActions.deleteUserById(user.id))
             }} type="button" className="btn btn-danger">Delete</button>
-            <button className="btn btn-success" onClick={() => {
-              setShowUserForm(true)
-              setDataForm({
-                functionCloseForm: setShowUserForm,
-                type: 'update',
-                functionSubmit: counterActions.updateUser,
-                preData: user
-              })
-            }}>Edit</button>
+            <button onClick={() => {
+                setShowUserForm(true)
+                setDataForm({
+                  functionCloseForm: setShowUserForm,
+                  type: 'update', // loại form: add: thêm, update: cập nhật
+                  functionSubmit: counterActions.updateUser,
+                  preData: user
+                })
+            }} type="button" className="btn btn-success">Edit</button>
           </Fragment>
         )
       }
       <br></br>
-
-
       <Outlet></Outlet>
     </div>
   )

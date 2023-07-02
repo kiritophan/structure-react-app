@@ -10,13 +10,13 @@
     justify-content: center;
     align-items: center;
     font-size: 15px;
-
     .forms {
         width: 450px;
         height: 300px;
         background-color: white;
         transform: translateY(-25%);
         border-radius: 5px;
-
+        border: 1px solid #666;
+        padding: 10px;
     }
 }
