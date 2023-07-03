@@ -10,28 +10,27 @@ export default function About() {
             </div>
 
             <div className="content">
-                <span>BỘ SƯU TẬP</ span>
-                <h3 className="title">J-HOPE VÀ THE KEEPALL</h3>
-                <p>Một bài thơ ca về sự di chuyển, Đại sứ nhà Louis Vuitton, j-hope, 
-                    trưng bày túi Keepall mang tính biểu tượng trong một chiến dịch biểu diễn múa động lực, 
-                    khẳng định sức hấp dẫn đa dụng của bộ sưu tập.</p>
+                <h1 className="title"> COLLECTION </ h1>
+                <h3>J-HOPE AND THE KEEPALL</h3>
+                <p>Timelessly elegant in emblematic Taiga leather, Louis Vuitton's iconic Keepall holdall,
+                    the original soft travel bag, is a stylish and practical choice for a weekend away.</p>
                 <a href="#" className="btn">read more</a>
                 <div className="icons-container">
                     <div className="icons">
                         <img src="image/serv-1.png" alt="" />
-                            <h3>Về chúng tôi</h3>
+                            <h3>About</h3>
                     </div>
                     <div className="icons">
                         <img src="image/serv-2.png" alt="" />
-                        <h3>Về chúng tôi</h3>
+                        <h3>About</h3>
                     </div>
                     <div className="icons">
                         <img src="image/serv-3.png" alt="" />
-                        <h3>Về chúng tôi</h3>
+                        <h3>About</h3>
                     </div>
                     <div className="icons">
                         <img src="image/serv-4.png" alt="" />
-                        <h3>Về chúng tôi</h3>
+                        <h3>About</h3>
                     </div>
                 </div>
             </div>

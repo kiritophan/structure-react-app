@@ -68,336 +68,336 @@
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_1.jpeg",
             "price": 1500,
-            "type": "combo"
+            "type": "balenciaga"
         },
         {
             "id": 2,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_2.jpeg",
             "price": 1500,
-            "type": "combo"
+            "type": "balenciaga"
         },
         {
             "id": 3,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_3.jpeg",
             "price": 1500,
-            "type": "combo"
+            "type": "balenciaga"
         },
         {
             "id": 4,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_4.jpeg",
             "price": 1500,
-            "type": "combo"
+            "type": "balenciaga"
         },
         {
             "id": 5,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_5.jpeg",
             "price": 1500,
-            "type": "combo"
+            "type": "balenciaga"
         },
         {
             "id": 6,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_6.jpeg",
             "price": 1500,
-            "type": "combo"
+            "type": "balenciaga"
         },
         {
             "id": 7,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_7.jpeg",
             "price": 1500,
-            "type": "combo"
+            "type": "balenciaga"
         },
         {
             "id": 8,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_8.jpeg",
             "price": 1500,
-            "type": "combo"
+            "type": "balenciaga"
         },
         {
             "id": 9,
             "name": "Louis Vuitton",
             "url": "../image/louis_vuitton/lv_01.jpeg",
             "price": 1500,
-            "type": "pizza"
+            "type": "louisVuitton"
         },
         {
             "id": 10,
             "name": "Louis Vuitton",
             "url": "../image/louis_vuitton/lv_02.jpeg",
             "price": 1500,
-            "type": "pizza"
+            "type": "louisVuitton"
         },
         {
             "id": 11,
             "name": "Louis Vuitton",
             "url": "../image/louis_vuitton/lv_03.jpeg",
             "price": 1500,
-            "type": "pizza"
+            "type": "louisVuitton"
         },
         {
             "id": 12,
             "name": "Louis Vuitton",
             "url": "../image/louis_vuitton/lv_04.jpeg",
             "price": 1500,
-            "type": "pizza"
+            "type": "louisVuitton"
         },
         {
             "id": 13,
             "name": "Louis Vuitton",
             "url": "../image/louis_vuitton/lv_05.jpeg",
             "price": 1500,
-            "type": "pizza"
+            "type": "louisVuitton"
         },
         {
             "id": 14,
             "name": "Louis Vuitton",
             "url": "../image/louis_vuitton/lv_06.jpeg",
             "price": 1500,
-            "type": "pizza"
+            "type": "louisVuitton"
         },
         {
             "id": 15,
             "name": "Louis Vuitton",
             "url": "../image/louis_vuitton/lv_07.jpeg",
             "price": 1500,
-            "type": "pizza"
+            "type": "louisVuitton"
         },
         {
             "id": 16,
             "name": "Louis Vuitton",
             "url": "../image/louis_vuitton/lv_08.jpeg",
             "price": 1500,
-            "type": "pizza"
+            "type": "louisVuitton"
         },
         {
             "id": 17,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_1.jpeg",
             "price": 150,
-            "type": "burger"
+            "type": "nike"
         },
         {
             "id": 18,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_2.jpeg",
             "price": 150,
-            "type": "burger"
+            "type": "nike"
         },
         {
             "id": 19,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_3.jpeg",
             "price": 150,
-            "type": "burger"
+            "type": "nike"
         },
         {
             "id": 20,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_4.jpeg",
             "price": 150,
-            "type": "burger"
+            "type": "nike"
         },
         {
             "id": 21,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_low_1.jpeg",
             "price": 150,
-            "type": "burger"
+            "type": "nike"
         },
         {
             "id": 22,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_low_2.jpeg",
             "price": 150,
-            "type": "burger"
+            "type": "nike"
         },
         {
             "id": 23,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_low_3.jpeg",
             "price": 150,
-            "type": "burger"
+            "type": "nike"
         },
         {
             "id": 24,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_low_4.jpeg",
             "price": 150,
-            "type": "burger"
+            "type": "nike"
         },
         {
             "id": 25,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_1.jpeg",
             "price": 150,
-            "type": "chicken"
+            "type": "jordan"
         },
         {
             "id": 26,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_2.jpeg",
             "price": 150,
-            "type": "chicken"
+            "type": "jordan"
         },
         {
             "id": 27,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_3.jpeg",
             "price": 150,
-            "type": "chicken"
+            "type": "jordan"
         },
         {
             "id": 28,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_4.jpeg",
             "price": 150,
-            "type": "chicken"
+            "type": "jordan"
         },
         {
             "id": 29,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_5.jpeg",
             "price": 150,
-            "type": "chicken"
+            "type": "jordan"
         },
         {
             "id": 30,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_6.jpeg",
             "price": 150,
-            "type": "chicken"
+            "type": "jordan"
         },
         {
             "id": 31,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_7.jpeg",
             "price": 150,
-            "type": "chicken"
+            "type": "jordan"
         },
         {
             "id": 32,
             "name": "Nike",
             "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_8.jpeg",
             "price": 150,
-            "type": "chicken"
+            "type": "jordan"
         },
         {
             "id": 33,
             "name": "Adidas",
             "url": "../image/adidas/nmd/nmd_01.jpeg",
             "price": 150,
-            "type": "dinner"
+            "type": "adidas"
         },
         {
             "id": 34,
             "name": "Adidas",
             "url": "../image/adidas/nmd/nmd_02.jpeg",
             "price": 150,
-            "type": "dinner"
+            "type": "adidas"
         },
         {
             "id": 35,
             "name": "Adidas",
             "url": "../image/adidas/nmd/nmd_03.jpeg",
             "price": 150,
-            "type": "dinner"
+            "type": "adidas"
         },
         {
             "id": 36,
             "name": "Adidas",
             "url": "../image/adidas/nmd/nmd_04.jpeg",
             "price": 150,
-            "type": "dinner"
+            "type": "adidas"
         },
         {
             "id": 37,
             "name": "Adidas",
             "url": "../image/adidas/nmd/nmd_05.jpeg",
             "price": 150,
-            "type": "dinner"
+            "type": "adidas"
         },
         {
             "id": 38,
             "name": "Adidas",
             "url": "../image/adidas/nmd/nmd_06.jpeg",
             "price": 150,
-            "type": "dinner"
+            "type": "adidas"
         },
         {
             "id": 39,
             "name": "Adidas",
             "url": "../image/adidas/nmd/nmd_07.jpeg",
             "price": 150,
-            "type": "dinner"
+            "type": "adidas"
         },
         {
             "id": 40,
             "name": "Adidas",
             "url": "../image/adidas/nmd/nmd_08.jpeg",
             "price": 150,
-            "type": "dinner"
+            "type": "adidas"
         },
         {
             "id": 41,
             "name": "Vans",
             "url": "../image/vans/style_36/vans_style_36_1.jpeg",
             "price": 150,
-            "type": "drink"
+            "type": "vans"
         },
         {
             "id": 42,
             "name": "Vans",
             "url": "../image/vans/style_36/vans_style_36_2.jpeg",
             "price": 150,
-            "type": "drink"
+            "type": "vans"
         },
         {
             "id": 42,
             "name": "Vans",
             "url": "../image/vans/style_36/vans_style_36_3.jpeg",
             "price": 150,
-            "type": "drink"
+            "type": "vans"
         },
         {
             "id": 44,
             "name": "Vans",
             "url": "../image/vans/style_36/vans_style_36_4.jpeg",
             "price": 150,
-            "type": "drink"
+            "type": "vans"
         },
         {
             "id": 45,
             "name": "Vans",
             "url": "../image/vans/style_36/vans_style_36_5.jpeg",
             "price": 150,
-            "type": "drink"
+            "type": "vans"
         },
         {
             "id": 46,
             "name": "Vans",
             "url": "../image/vans/style_36/vans_style_36_6.jpeg",
             "price": 150,
-            "type": "drink"
+            "type": "vans"
         },
         {
             "id": 47,
             "name": "Vans",
             "url": "../image/vans/style_36/vans_style_36_7.jpeg",
             "price": 150,
-            "type": "drink"
+            "type": "vans"
         },
         {
             "id": 48,
             "name": "Vans",
             "url": "../image/vans/style_36/vans_style_36_8.jpeg",
             "price": 150,
-            "type": "drink"
+            "type": "vans"
         }
     ]
 }

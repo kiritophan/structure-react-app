@@ -4,13 +4,9 @@ import "./Cart.scss";
 export default function Cart() {
     return (
         <section className="shopping-cart-container">
-
             <div className="products-container">
-
                 <h3 className="title">YOUR SHOPPING BAG</h3>
-
                 <div className="box-container">
-
                     <div className="box">
                         <i className="fas fa-times"></i>
                         <img src="image/adidas/nmd/nmd_01.jpeg" alt="" />
@@ -23,7 +19,6 @@ export default function Cart() {
                             <span className="price"> $40.00 </span>
                         </div>
                     </div>
-
                     <div className="box">
                         <i className="fas fa-times"></i>
                         <img src="image/adidas/nmd/nmd_01.jpeg" alt="" />

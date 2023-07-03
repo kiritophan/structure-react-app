@@ -62,15 +62,24 @@ html::-webkit-scrollbar-thumb {
     height: 100%;
   }
 
+  .article-container {
+    width: 100%;
+    max-width: $widthContent;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
   .footer-container {
     width: 100%;
     display: flex;
     justify-content: center;
+
     .footer-contents {
       width: 100%;
       max-width: $widthContent;
     }
-    
+
   }
 }
 
