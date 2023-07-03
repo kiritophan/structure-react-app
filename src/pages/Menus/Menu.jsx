@@ -19,26 +19,26 @@ export default function Menu() {
 
   // console.log(productStore);
 
-  const listFoods = productStore.listProducts.filter((food) => food.type === type)
-
+  const listFoods = productStore.listProducts.filter((shoes) => shoes.type === type)
   return (
     <section className="popular" id="popular">
 
     <div className="heading">
-        <span>popular food</span>
-        <h3>our special dishes</h3>
+        <span>LUXURY BRAND</span>
+        <h3>Trải Nghiệm Mua Sắm Số 1</h3>
     </div>
 
     <div className="box-container">
 
-        {listFoods.map((food, index) =>
+        {listFoods.map((shoes, index) =>
             <div class="box" key={randomId()}>
                 <a href="#" class="fas fa-heart"></a>
                 <div class="image">
-                    <img src={food.url} alt="" />
+                    <a href="/product"><img src={shoes.url} alt="" /></a>
                 </div>
                 <div class="content">
-                    <h5>{food.name}</h5>
+                    
+                    <h5>{shoes.name}</h5>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -47,8 +47,7 @@ export default function Menu() {
                         <i class="fas fa-star-half-alt"></i>
                         <span> (50) </span>
                     </div>
-                    <div class="price">{convertToUSD(food.price)} <span>$50.00</span></div>
-                    <a href="#" class="btn">add to cart</a>
+                    <div class="price">{convertToUSD(shoes.price)}</div>
                 </div>
             </div>
         )}

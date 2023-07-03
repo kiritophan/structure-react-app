@@ -6,30 +6,32 @@ export default function About() {
         <section className="about" id="about">
 
             <div className="image">
-                <img src="image/about-img.png" alt="" />
+                <img src="https://vn.louisvuitton.com/images/is/image/35100040v_Art_of_Living_May23_DI3?wid=2048" alt="" />
             </div>
 
             <div className="content">
-                <span>why choose us?</span>
-                <h3 className="title">what's make our food delicious!</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ut explicabo, numquam iusto est a ipsum assumenda tempore esse corporis?</p>
+                <span>BỘ SƯU TẬP</ span>
+                <h3 className="title">J-HOPE VÀ THE KEEPALL</h3>
+                <p>Một bài thơ ca về sự di chuyển, Đại sứ nhà Louis Vuitton, j-hope, 
+                    trưng bày túi Keepall mang tính biểu tượng trong một chiến dịch biểu diễn múa động lực, 
+                    khẳng định sức hấp dẫn đa dụng của bộ sưu tập.</p>
                 <a href="#" className="btn">read more</a>
                 <div className="icons-container">
                     <div className="icons">
                         <img src="image/serv-1.png" alt="" />
-                            <h3>fast delivery</h3>
+                            <h3>Về chúng tôi</h3>
                     </div>
                     <div className="icons">
                         <img src="image/serv-2.png" alt="" />
-                            <h3>fresh food</h3>
+                        <h3>Về chúng tôi</h3>
                     </div>
                     <div className="icons">
                         <img src="image/serv-3.png" alt="" />
-                            <h3>best quality</h3>
+                        <h3>Về chúng tôi</h3>
                     </div>
                     <div className="icons">
                         <img src="image/serv-4.png" alt="" />
-                            <h3>24/7 support</h3>
+                        <h3>Về chúng tôi</h3>
                     </div>
                 </div>
             </div>

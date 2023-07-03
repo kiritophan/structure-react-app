@@ -7,15 +7,15 @@ export default function Cart() {
 
             <div className="products-container">
 
-                <h3 className="title">your products</h3>
+                <h3 className="title">YOUR SHOPPING BAG</h3>
 
                 <div className="box-container">
 
                     <div className="box">
                         <i className="fas fa-times"></i>
-                        <img src="image/menu-1.png" alt="" />
+                        <img src="image/adidas/nmd/nmd_01.jpeg" alt="" />
                         <div className="content">
-                            <h3>delicious food</h3>
+                            <h3>shoes</h3>
                             <span> quantity : </span>
                             <input type="number" name="" value="1" id="" />
                             <br />
@@ -26,9 +26,9 @@ export default function Cart() {
 
                     <div className="box">
                         <i className="fas fa-times"></i>
-                        <img src="image/menu-2.png" alt="" />
+                        <img src="image/adidas/nmd/nmd_01.jpeg" alt="" />
                         <div className="content">
-                            <h3>delicious food</h3>
+                            <h3>shoes</h3>
                             <span> quantity : </span>
                             <input type="number" name="" value="1" id="" />
                             <br />
@@ -39,9 +39,9 @@ export default function Cart() {
 
                     <div className="box">
                         <i className="fas fa-times"></i>
-                        <img src="image/menu-3.png" alt="" />
+                        <img src="image/adidas/nmd/nmd_01.jpeg" alt="" />
                         <div className="content">
-                            <h3>delicious food</h3>
+                            <h3>shoes</h3>
                             <span> quantity : </span>
                             <input type="number" name="" value="1" id="" />
                             <br />
@@ -52,9 +52,9 @@ export default function Cart() {
 
                     <div className="box">
                         <i className="fas fa-times"></i>
-                        <img src="image/menu-4.png" alt="" />
+                        <img src="image/adidas/nmd/nmd_01.jpeg" alt="" />
                         <div className="content">
-                            <h3>delicious food</h3>
+                            <h3>shoes</h3>
                             <span> quantity : </span>
                             <input type="number" name="" value="1" id="" />
                             <br />
@@ -65,9 +65,9 @@ export default function Cart() {
 
                     <div className="box">
                         <i className="fas fa-times"></i>
-                        <img src="image/menu-5.png" alt="" />
+                        <img src="image/adidas/nmd/nmd_01.jpeg" alt="" />
                         <div className="content">
-                            <h3>delicious food</h3>
+                            <h3>shoes</h3>
                             <span> quantity : </span>
                             <input type="number" name="" value="1" id="" />
                             <br />
@@ -88,11 +88,8 @@ export default function Cart() {
 
                     <h3 className="subtotal"> subtotal : <span>$200</span> </h3>
                     <h3 className="total"> total : <span>$200</span> </h3>
-
-                    <a href="#" className="btn">proceed to checkout</a>
-
+                    <a href="/mycart" className="btn">View your Shopping Cart</a>
                 </div>
-
             </div>
 
         </section>

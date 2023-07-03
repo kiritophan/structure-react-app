@@ -1,22 +1,47 @@
-import React from 'react'
-import "./Banner.scss"
-
+import React, { useState } from "react";
+import { Carousel } from "antd";
+import './Banner.scss'
 export default function Banner() {
+    const [banners, setBanners] = useState([
+        {
+            id: 1,
+            url: "../image/slider/slider_1.jpg",
+            urlHistory: "SPING / SUMMONER COLLECTION 2023",
+            des: "Get up to 30% Off New Arrivals",
+        },
+        {
+            id: 2,
+            url: "../image/slider/slider_2.jpeg",
+            urlHistory: "SPING / SUMMONER COLLECTION 2023",
+            des: "Get up to 30% Off New Arrivals",
+        },
+        {
+            id: 3,
+            url: "../image/slider/slider_3.jpeg",
+            urlHistory: "SPING / SUMMONER COLLECTION 2023",
+            des: "Get up to 30% Off New Arrivals",
+        },
+        {
+            id: 4,
+            url: "../image/slider/slider_4.jpeg",
+            urlHistory: "SPING / SUMMONER COLLECTION 2023",
+            des: "Get up to 30% Off New Arrivals",
+        },
+    ]);
     return (
-        <section className="home" id="home">
-
-            <div className="content">
-                <span>welcome foodies</span>
-                <h3>different spices for the different tastes 😋</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis unde dolores temporibus hic quam debitis tenetur harum nemo.</p>
-                <a href="#" className="btn">order now</a>
-            </div>
-
-            <div className="image">
-                <img src="image/home-img.png" alt="" className="home-img" />
-                <img src="image/home-parallax-img.png" alt="" className="home-parallax-img" />
-            </div>
-
-        </section>
+        <Carousel className="home" id="home" autoplay autoplaySpeed={2500} >
+            {banners.map((banner, index) => (
+                <div key={banner.id + index}>
+                    <img className="home-img" src={banner.url} />
+                    <div className="items-content">
+                        <span className="history">{banner.urlHistory.toUpperCase()}</span>
+                        <span className="des">{banner.des}</span>
+                    </div>
+                    <button type="button" class="btn btn-success order-now">
+                        Order Now
+                    </button>
+                </div>
+            ))}
+        </Carousel>
     )
 }

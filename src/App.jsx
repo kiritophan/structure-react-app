@@ -11,7 +11,6 @@ function App() {
         <div className="nav-contents">
           <Navbar></Navbar>
         </div>
-
       </div>
 
       <div className='app_container'>
@@ -22,9 +21,9 @@ function App() {
           <Route path="register" element={LazyLoad(() => import("@pages/Registers/Register"))()} />
           <Route path="login" element={LazyLoad(() => import("@pages/Logins/Login"))()} />
           <Route path="cart" element={LazyLoad(() => import("@pages/Carts/Cart"))()} />
-          <Route path="menu/:type" element={LazyLoad(() => import("@pages/Menus/Menu"))()}>
-
-          </Route>
+          <Route path='product' element={LazyLoad(() => import("@pages/Modals/CartModal"))()} />
+          <Route path='mycart' element={LazyLoad(() => import("@pages/Modals/MyCarts/MyCart"))()} />
+          <Route path="menu/:type" element={LazyLoad(() => import("@pages/Menus/Menu"))()}/>
         </Routes>
       </div>
 

@@ -129,6 +129,16 @@
     font-size: 1.7rem;
     cursor: pointer;
     color: #fff;
-    background: #27ae60;
+    background: #000;
     border-radius: 0.5rem;
+  }
+  .btn:hover {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.8rem;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: #000;
+      background: #eae8e4;
+      border-radius: 0.5rem;
   }

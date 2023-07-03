@@ -21,20 +21,21 @@ export default function Navbar() {
                         id="dropdownMenuButton"
                         data-mdb-toggle="dropdown"
                         aria-expanded="false"
+                        style={{marginTop: '5px'}}
                     >
-                        Menu
+                        Shoes
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <Link to="/menu/combo"><a className="dropdown-item">Balenciaga</a></Link>
                         <Link to="/menu/pizza"><a className="dropdown-item">Louis Vuitton</a></Link>
-                        <Link to="/menu/burger"><a className="dropdown-item">Burger</a></Link>
-                        <Link to="/menu/chicken"><a className="dropdown-item">Chicken</a></Link>
-                        <Link to="/menu/dinner"><a className="dropdown-item">Dinner</a></Link>
-                        <Link to="/menu/drink"><a className="dropdown-item">Drink</a></Link>
+                        <Link to="/menu/burger"><a className="dropdown-item">Nike</a></Link>
+                        <Link to="/menu/chicken"><a className="dropdown-item">Jordan</a></Link>
+                        <Link to="/menu/dinner"><a className="dropdown-item">Adidas</a></Link>
+                        <Link to="/menu/drink"><a className="dropdown-item">Vans</a></Link>
                     </ul>
                 </div>
-                <a href="#order">Order</a>
-                <a href="#blogs">Blogs</a>
+                <a href="#blogs">NEW ARTICLES</a>
+                <a href="#order">HYPE DROP</a>
             </nav>
 
             <div className="icons">

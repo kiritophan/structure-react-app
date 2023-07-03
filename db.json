@@ -67,308 +67,336 @@
             "id": 1,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_1.jpeg",
-            "price": 10,
+            "price": 1500,
             "type": "combo"
         },
         {
             "id": 2,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_2.jpeg",
-            "price": 10,
+            "price": 1500,
             "type": "combo"
         },
         {
             "id": 3,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_3.jpeg",
-            "price": 10,
+            "price": 1500,
             "type": "combo"
         },
         {
             "id": 4,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_4.jpeg",
-            "price": 10,
+            "price": 1500,
             "type": "combo"
         },
         {
             "id": 5,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_5.jpeg",
-            "price": 10,
+            "price": 1500,
             "type": "combo"
         },
         {
             "id": 6,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_6.jpeg",
-            "price": 10,
+            "price": 1500,
             "type": "combo"
         },
         {
             "id": 7,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_7.jpeg",
-            "price": 10,
+            "price": 1500,
             "type": "combo"
         },
         {
             "id": 8,
             "name": "Balenciaga",
             "url": "../image/balenciaga/speed/balenciaga_speed_8.jpeg",
-            "price": 10,
+            "price": 1500,
             "type": "combo"
         },
         {
             "id": 9,
-            "name": "Balenciaga",
-            "url": "../image/balenciaga/speed/balenciaga_speed_9.jpeg",
-            "price": 10,
+            "name": "Louis Vuitton",
+            "url": "../image/louis_vuitton/lv_01.jpeg",
+            "price": 1500,
             "type": "pizza"
         },
         {
             "id": 10,
-            "name": "Balenciaga",
-            "url": "../image/balenciaga/speed/balenciaga_speed_10.jpeg",
-            "price": 10,
+            "name": "Louis Vuitton",
+            "url": "../image/louis_vuitton/lv_02.jpeg",
+            "price": 1500,
             "type": "pizza"
         },
         {
             "id": 11,
-            "name": "Pizza Shrimp Grilled Pepper",
-            "url": "../image/pizza/Pizza_03.jpg",
-            "price": 10,
+            "name": "Louis Vuitton",
+            "url": "../image/louis_vuitton/lv_03.jpeg",
+            "price": 1500,
             "type": "pizza"
         },
         {
             "id": 12,
-            "name": "Pizza Beef And Seafood",
-            "url": "../image/pizza/Pizza_04.jpg",
-            "price": 10,
+            "name": "Louis Vuitton",
+            "url": "../image/louis_vuitton/lv_04.jpeg",
+            "price": 1500,
             "type": "pizza"
         },
         {
             "id": 13,
-            "name": "Pizza Beef And Seafood",
-            "url": "../image/pizza/Pizza_04.jpg",
-            "price": 10,
+            "name": "Louis Vuitton",
+            "url": "../image/louis_vuitton/lv_05.jpeg",
+            "price": 1500,
             "type": "pizza"
         },
         {
             "id": 14,
-            "name": "Pizza Beef And Seafood",
-            "url": "../image/pizza/Pizza_04.jpg",
-            "price": 10,
+            "name": "Louis Vuitton",
+            "url": "../image/louis_vuitton/lv_06.jpeg",
+            "price": 1500,
             "type": "pizza"
         },
         {
             "id": 15,
-            "name": "Pizza Beef And Seafood",
-            "url": "../image/pizza/Pizza_04.jpg",
-            "price": 10,
+            "name": "Louis Vuitton",
+            "url": "../image/louis_vuitton/lv_07.jpeg",
+            "price": 1500,
             "type": "pizza"
         },
         {
             "id": 16,
-            "name": "Pizza Beef And Seafood",
-            "url": "../image/pizza/Pizza_04.jpg",
-            "price": 10,
+            "name": "Louis Vuitton",
+            "url": "../image/louis_vuitton/lv_08.jpeg",
+            "price": 1500,
             "type": "pizza"
         },
         {
             "id": 17,
-            "name": "Extreme Cheese Whopper JR",
-            "url": "../image/burger/burger_01.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_1.jpeg",
+            "price": 150,
             "type": "burger"
         },
         {
             "id": 18,
-            "name": "Whopper JR",
-            "url": "../image/burger/burger_02.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_2.jpeg",
+            "price": 150,
             "type": "burger"
         },
         {
             "id": 19,
-            "name": "Whopper Burger",
-            "url": "../image/burger/burger_03.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_3.jpeg",
+            "price": 150,
             "type": "burger"
         },
         {
             "id": 20,
-            "name": "Fish Burger",
-            "url": "../image/burger/burger_04.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_4.jpeg",
+            "price": 150,
             "type": "burger"
         },
         {
             "id": 21,
-            "name": "Grilled Onion Burger",
-            "url": "../image/burger/burger_05.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_low_1.jpeg",
+            "price": 150,
             "type": "burger"
         },
         {
             "id": 22,
-            "name": "BBQ Chicken Cheese Burger",
-            "url": "../image/burger/burger_06.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_low_2.jpeg",
+            "price": 150,
             "type": "burger"
         },
         {
             "id": 23,
-            "name": "Spicy Tendercrisp Burger",
-            "url": "../image/burger/burger_07.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_low_3.jpeg",
+            "price": 150,
             "type": "burger"
         },
         {
             "id": 24,
-            "name": "Tendergrill Burger",
-            "url": "../image/burger/burger_08.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_low_4.jpeg",
+            "price": 150,
             "type": "burger"
         },
         {
             "id": 25,
-            "name": "Chicken Crispy",
-            "url": "../image/chicken/chicken_01.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_1.jpeg",
+            "price": 150,
             "type": "chicken"
         },
         {
             "id": 26,
-            "name": "Mix Wing 4pcs",
-            "url": "../image/chicken/chicken_02.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_2.jpeg",
+            "price": 150,
             "type": "chicken"
         },
         {
             "id": 27,
-            "name": "Mix Wing 6pcs",
-            "url": "../image/chicken/chicken_03.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_3.jpeg",
+            "price": 150,
             "type": "chicken"
         },
         {
             "id": 28,
-            "name": "Mix Wing 2pcs",
-            "url": "../image/chicken/chicken_04.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_4.jpeg",
+            "price": 150,
             "type": "chicken"
         },
         {
             "id": 29,
-            "name": "Chicken Flamin",
-            "url": "../image/chicken/chicken_05.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_5.jpeg",
+            "price": 150,
             "type": "chicken"
         },
         {
             "id": 30,
-            "name": "Chicken BBQ",
-            "url": "../image/chicken/chicken_06.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_6.jpeg",
+            "price": 150,
             "type": "chicken"
         },
         {
             "id": 31,
-            "name": "Combo Chicken Flamin 2PCS",
-            "url": "../image/chicken/chicken_07.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_7.jpeg",
+            "price": 150,
             "type": "chicken"
         },
         {
             "id": 32,
-            "name": "Combo Chicken BBQ 2PCS",
-            "url": "../image/chicken/chicken_08.jpg",
-            "price": 10,
+            "name": "Nike",
+            "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_8.jpeg",
+            "price": 150,
             "type": "chicken"
         },
         {
             "id": 33,
-            "name": "BBQ Chicken Wing Rice",
-            "url": "../image/dinner/dinner_01.jpg",
-            "price": 10,
+            "name": "Adidas",
+            "url": "../image/adidas/nmd/nmd_01.jpeg",
+            "price": 150,
             "type": "dinner"
         },
         {
             "id": 34,
-            "name": "Combo Grilled Beef Rice Lemongrass Chili Sauce",
-            "url": "../image/dinner/dinner_02.jpg",
-            "price": 10,
+            "name": "Adidas",
+            "url": "../image/adidas/nmd/nmd_02.jpeg",
+            "price": 150,
             "type": "dinner"
         },
         {
             "id": 35,
-            "name": "Combo Grilled Beef Rice With BBQ Sauce",
-            "url": "../image/dinner/dinner_03.jpg",
-            "price": 10,
+            "name": "Adidas",
+            "url": "../image/adidas/nmd/nmd_03.jpeg",
+            "price": 150,
             "type": "dinner"
         },
         {
             "id": 36,
-            "name": "Combo Grilled Beef With Cheese Sauce",
-            "url": "../image/dinner/dinner_04.jpg",
-            "price": 10,
+            "name": "Adidas",
+            "url": "../image/adidas/nmd/nmd_04.jpeg",
+            "price": 150,
             "type": "dinner"
         },
         {
             "id": 37,
-            "name": "Minute Mad",
-            "url": "../image/drink/drink_01.jpg",
-            "price": 10,
-            "type": "drink"
+            "name": "Adidas",
+            "url": "../image/adidas/nmd/nmd_05.jpeg",
+            "price": 150,
+            "type": "dinner"
         },
         {
             "id": 38,
-            "name": "Milo",
-            "url": "../image/drink/drink_02.jpg",
-            "price": 10,
-            "type": "drink"
+            "name": "Adidas",
+            "url": "../image/adidas/nmd/nmd_06.jpeg",
+            "price": 150,
+            "type": "dinner"
         },
         {
             "id": 39,
-            "name": "Dasani",
-            "url": "../image/drink/drink_03.jpg",
-            "price": 10,
-            "type": "drink"
+            "name": "Adidas",
+            "url": "../image/adidas/nmd/nmd_07.jpeg",
+            "price": 150,
+            "type": "dinner"
         },
         {
             "id": 40,
-            "name": "Nestea",
-            "url": "../image/drink/drink_04.jpg",
-            "price": 10,
-            "type": "drink"
+            "name": "Adidas",
+            "url": "../image/adidas/nmd/nmd_08.jpeg",
+            "price": 150,
+            "type": "dinner"
         },
         {
             "id": 41,
-            "name": "Coca",
-            "url": "../image/drink/drink_05.jpg",
-            "price": 10,
+            "name": "Vans",
+            "url": "../image/vans/style_36/vans_style_36_1.jpeg",
+            "price": 150,
             "type": "drink"
         },
         {
             "id": 42,
-            "name": "Fanta",
-            "url": "../image/drink/drink_06.jpg",
-            "price": 10,
+            "name": "Vans",
+            "url": "../image/vans/style_36/vans_style_36_2.jpeg",
+            "price": 150,
             "type": "drink"
         },
         {
-            "id": 43,
-            "name": "Sprite",
-            "url": "../image/drink/drink_07.jpg",
-            "price": 10,
+            "id": 42,
+            "name": "Vans",
+            "url": "../image/vans/style_36/vans_style_36_3.jpeg",
+            "price": 150,
             "type": "drink"
         },
         {
             "id": 44,
-            "name": "Coke Light",
-            "url": "../image/drink/drink_08.jpg",
-            "price": 10,
+            "name": "Vans",
+            "url": "../image/vans/style_36/vans_style_36_4.jpeg",
+            "price": 150,
+            "type": "drink"
+        },
+        {
+            "id": 45,
+            "name": "Vans",
+            "url": "../image/vans/style_36/vans_style_36_5.jpeg",
+            "price": 150,
+            "type": "drink"
+        },
+        {
+            "id": 46,
+            "name": "Vans",
+            "url": "../image/vans/style_36/vans_style_36_6.jpeg",
+            "price": 150,
+            "type": "drink"
+        },
+        {
+            "id": 47,
+            "name": "Vans",
+            "url": "../image/vans/style_36/vans_style_36_7.jpeg",
+            "price": 150,
+            "type": "drink"
+        },
+        {
+            "id": 48,
+            "name": "Vans",
+            "url": "../image/vans/style_36/vans_style_36_8.jpeg",
+            "price": 150,
             "type": "drink"
         }
     ]
