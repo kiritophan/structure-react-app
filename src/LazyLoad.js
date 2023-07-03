@@ -10,7 +10,7 @@ const LazyLoad = (importFunc) => {
   //   });
   // });
   const LazyComponent = lazy(importFunc);
-
+  
   return (props) => (
     <Suspense fallback={<Loading></Loading>}>
       <LazyComponent {...props} />

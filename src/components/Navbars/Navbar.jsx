@@ -8,7 +8,7 @@ export default function Navbar() {
     return (
         <header className="header">
 
-            <Link to="/" className="logo"> <i className="fas fa-utensils"></i> food </Link>
+            <Link to="/" className="logo"> <img style={{width: '50%', height: 'auto'}} src="../image/header-logo-snkrdunk.png" alt="" /> </Link>
 
             <nav className="navbar">
                 <Link to="/">Home</Link>
@@ -25,8 +25,8 @@ export default function Navbar() {
                         Menu
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <Link to="/menu/combo"><a className="dropdown-item">Combo</a></Link>
-                        <Link to="/menu/pizza"><a className="dropdown-item">Pizza</a></Link>
+                        <Link to="/menu/combo"><a className="dropdown-item">Balenciaga</a></Link>
+                        <Link to="/menu/pizza"><a className="dropdown-item">Louis Vuitton</a></Link>
                         <Link to="/menu/burger"><a className="dropdown-item">Burger</a></Link>
                         <Link to="/menu/chicken"><a className="dropdown-item">Chicken</a></Link>
                         <Link to="/menu/dinner"><a className="dropdown-item">Dinner</a></Link>
