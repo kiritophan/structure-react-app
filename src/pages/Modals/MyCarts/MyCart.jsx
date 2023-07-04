@@ -15,25 +15,13 @@ export default function MyCart() {
 
     useEffect(() => {
         dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
-        dispatch(productActions.findAllProducts())
     }, [])
     useEffect(() => {
-        if (userLoginStore.userInfor != null && productStore.listProducts.length > 0) {
+        if (userLoginStore.userInfor != null) {
 
             let carts = [...userLoginStore.userInfor.carts]
+            setCartData(carts)
 
-            let listProducts = productStore.listProducts
-
-            for (let i = 0; i < carts.length; i++) {
-                for (let j = 0; j < listProducts.length; j++) {
-                    if (carts[i].productId == listProducts[j].id) {
-                        carts[i] = Object.assign({}, carts[i], { url: listProducts[j].url });
-                        carts[i] = Object.assign({}, carts[i], { price: listProducts[j].price });
-                        carts[i] = Object.assign({}, carts[i], { name: listProducts[j].name });
-                    }
-                }
-                setCartData(carts)
-            }
         }
     }, [userLoginStore.userInfor])
 
@@ -42,10 +30,40 @@ export default function MyCart() {
     function calCartPrice() {
         let totalPrice = 0;
         for (let i = 0; i < cartData.length; i++) {
-            totalPrice += cartData[i].price;
+            totalPrice += cartData[i].price * cartData[i].quantity;
         }
         return totalPrice;
     }
+
+
+    function handleDeleteProduct(productId) {
+        let carts = userLoginStore.userInfor.carts
+        let updatedCart = carts.filter((product) => product.productId !== productId)
+        setCartData(updatedCart)
+        dispatch(userLoginActions.updateCart(
+            {
+                userId: userLoginStore.userInfor.id,
+                carts: {
+                    carts: updatedCart
+                }
+            }
+        ))
+    }
+
+    function handleDecreaseQuantity() {
+        
+    }
+
+    function handleIncreaseQuantity() {
+       
+    }
+
+    function updatePriceAndSubtotal() {
+       
+    }
+
+
+
     return (
         <section className="h-100 h-custom">
             <div className="container h-100 py-5">
@@ -65,8 +83,8 @@ export default function MyCart() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {cartData?.map((item) => 
-                                        <tr>
+                                    {cartData?.map((item) =>
+                                        <tr key={item.productId}>
                                             <th scope="row" className="border-bottom-0">
                                                 <div className="d-flex align-items-center">
                                                     <img
@@ -92,13 +110,13 @@ export default function MyCart() {
                                                 <div className="d-flex flex-row">
                                                     <button
                                                         className="btn btn-link px-2"
-                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                        onClick={() => handleDecreaseQuantity(item.productId)} 
                                                     >
                                                         <i className="fas fa-minus" />
                                                     </button>
                                                     <input
                                                         id="form1"
-                                                        min={0}
+                                                        min="0"
                                                         name="quantity"
                                                         defaultValue={item.quantity}
                                                         type="number"
@@ -107,20 +125,20 @@ export default function MyCart() {
                                                     />
                                                     <button
                                                         className="btn btn-link px-2"
-                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                        onClick={() => handleIncreaseQuantity(item.productId)}
                                                     >
-                                                        <i className="fas fa-plus" />
+                                                        <i className="fas fa-plus"  />
                                                     </button>
                                                 </div>
                                             </td>
                                             <td className="align-middle border-bottom-0">
                                                 <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    {convertToUSD(item.price*item.quantity)}
+                                                    {convertToUSD(item.price * item.quantity)}
                                                 </p>
                                             </td>
                                             <td className="align-middle">
                                                 <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    <button><i class="fa-solid fa-xmark"></i> Remove </button>
+                                                    <button onClick={() => handleDeleteProduct(item.productId)}><i class="fa-solid fa-xmark"></i> Remove </button>
                                                 </p>
                                             </td>
                                         </tr>

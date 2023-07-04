@@ -44,6 +44,6 @@ const productSlice = createSlice(
 export const productActions = {
     ...productSlice.actions,
     findAllProducts,
-    searchProductById
+    searchProductById,
 }
 export default productSlice.reducer;

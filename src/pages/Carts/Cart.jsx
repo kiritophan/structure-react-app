@@ -42,8 +42,6 @@ function Cart({ show, handleClose }) {
             }
         }
     }, [userLoginStore.userInfor])
-
-    console.log(cartData)
     
     return (
         <>

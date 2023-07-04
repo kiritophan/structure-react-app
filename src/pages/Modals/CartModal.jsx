@@ -107,7 +107,10 @@ export default function CartModal() {
             addToCart(
               {
                 productId: product.id,
-                quantity: 1
+                quantity: 1,
+                url: product.url,
+                name: product.name,
+                price: product.price
               }
             )
           }}>Place in cart</MDBBtn>
