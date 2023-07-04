@@ -1,8 +1,23 @@
-import React from 'react';
 import "./Cart.scss";
+import React, { useState } from 'react';
+import {
+    MDBBtn,
+    MDBModal,
+    MDBModalDialog,
+    MDBModalContent,
+    MDBModalHeader,
+    MDBModalTitle,
+    MDBModalBody,
+    MDBModalFooter,
+} from 'mdb-react-ui-kit';
+
 
 export default function Cart() {
+    const [topRightModal, setTopRightModal] = useState(false);
+
+    const toggleShow = () => setTopRightModal(!topRightModal);
     return (
+        
         <section className="shopping-cart-container">
             <div className="products-container">
                 <h3 className="title">YOUR SHOPPING BAG</h3>
@@ -86,7 +101,7 @@ export default function Cart() {
                     <a href="/mycart" className="btn">View your Shopping Cart</a>
                 </div>
             </div>
-
         </section>
+
     )
 }

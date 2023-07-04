@@ -25,6 +25,7 @@ export default function Menu() {
     // console.log(productStore);
 
     const listShoes = productStore.listProducts.filter((shoes) => shoes.type === type)
+    
     return (
         <section className="popular" id="popular">
 

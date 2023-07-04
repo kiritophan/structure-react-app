@@ -38,7 +38,7 @@ export default function Navbar() {
                 <div id="menu-btn" className="fas fa-bars"></div>
                 
                 <div id="search-btn" className="fas fa-search"></div>
-                <div id="cart-btn" className="fas fa-shopping-cart" onClick={() => navigate("/cart")}></div>
+                <div id="cart-btn" className="fas fa-shopping-cart"></div>
                 <div id="login-btn" className="fas fa-user" onClick={() => navigate("/login")}></div>
             </div>
         </header>

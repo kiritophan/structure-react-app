@@ -9,8 +9,6 @@ const findAllProducts = createAsyncThunk(
     }
 )
 
-
-
 const searchProductById = createAsyncThunk(
     "searchProductById",
     async (id) => {
@@ -18,6 +16,7 @@ const searchProductById = createAsyncThunk(
         return res.data
     }
 )
+
 
 const productSlice = createSlice(
     {
