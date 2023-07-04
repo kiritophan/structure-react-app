@@ -25,6 +25,16 @@ const checkTokenLocal = createAsyncThunk(
     }
 )
 
+const updateCart = createAsyncThunk(
+    "updateCarts",
+    async (dataObj) => {
+        // localhost:4000/users/1
+        //console.log("dataObj",dataObj)
+        let res = await axios.patch(process.env.REACT_APP_SERVER_JSON + 'users/' + dataObj.userId, dataObj.carts);
+        return res.data
+    }
+)
+
 function createToken(userObj, privateKey) {
     return CryptoJS.AES.encrypt(JSON.stringify(userObj), privateKey).toString();
 }
@@ -79,9 +89,14 @@ const userLoginSlice = createSlice(
                 let user = action.payload.users.find(user => user.userName == deToken.userName);
                 if (user) {
                     if (user.password == deToken.password) {
-                        state.userInfor = deToken;
+                        state.userInfor = user;
                     }
                 }
+            });
+            // update cart
+            builder.addCase(updateCart.fulfilled, (state, action) => {
+                state.userInfor = action.payload
+                localStorage.removeItem("carts")
             });
             // xử lý các pending và rejected
             builder.addMatcher(
@@ -118,6 +133,7 @@ const userLoginSlice = createSlice(
 export const userLoginActions = {
     ...userLoginSlice.actions,
     login,
-    checkTokenLocal
+    checkTokenLocal,
+    updateCart
 }
 export default userLoginSlice.reducer;

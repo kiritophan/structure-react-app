@@ -34,7 +34,7 @@ const productSlice = createSlice(
             })
             // search product by id
             builder.addCase(searchProductById.fulfilled, (state, action) => {
-                console.log(action.payload);
+                // console.log(action.payload);
                 state.product = { ...action.payload };
             });
         }

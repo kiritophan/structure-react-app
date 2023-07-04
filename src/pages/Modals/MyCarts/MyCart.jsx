@@ -1,6 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom'
+import { productActions } from '../../../stores/slices/product.slice';
+import { userLoginActions } from '../../../stores/slices/userLogin.slice';
 
 export default function MyCart() {
+
+    const [cartData, setCartData] = useState([])
+
+    const dispatch = useDispatch();
+
+    const userLoginStore = useSelector(store => store.userLoginStore);
+
+    const productStore = useSelector(store => store.productStore)
+
+    useEffect(() => {
+        dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
+        dispatch(productActions.findAllProducts())
+    }, [])
+
+    // console.log(userLoginStore.userInfor.carts)
+
+    useEffect(() => {
+        console.log("run")
+        if (userLoginStore.userInfor != null && productStore.listProducts.length > 0) {
+
+            let carts = [...userLoginStore.userInfor.carts]
+
+            let listProducts = productStore.listProducts
+
+            for (let i = 0; i < carts.length; i++) {
+                for (let j = 0; j < listProducts.length; j++) {
+                    if (carts[i].productId == listProducts[j].id) {
+                        carts[i] = Object.assign({}, carts[i], { url: listProducts[j].url });
+                        carts[i] = Object.assign({}, carts[i], { price: listProducts[j].price });
+                        carts[i] = Object.assign({}, carts[i], { name: listProducts[j].name });
+                    }
+                }
+
+                setCartData(carts)
+            }
+
+            console.log(cartData)
+
+        }
+    }, [userLoginStore.userInfor])
+
+    console.log(cartData)
+
+
+
     return (
         <section className="h-100 h-custom">
             <div className="container h-100 py-5">
@@ -20,7 +69,7 @@ export default function MyCart() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    {/* <tr>
                                         <th scope="row">
                                             <div className="d-flex align-items-center">
                                                 <img
@@ -133,7 +182,68 @@ export default function MyCart() {
                                                 <button><i class="fa-solid fa-xmark"></i> Remove </button>
                                             </p>
                                         </td>
-                                    </tr>
+                                    </tr> */}
+
+                                    {cartData?.map((item) => 
+                                        <tr>
+                                            <th scope="row" className="border-bottom-0">
+                                                <div className="d-flex align-items-center">
+                                                    <img
+                                                        src="https://i.imgur.com/Oj1iQUX.webp"
+                                                        className="img-fluid rounded-3"
+                                                        style={{ width: 120 }}
+                                                        alt="Book"
+                                                    />
+                                                    <div className="flex-column ms-4">
+                                                        <p className="mb-2">
+                                                            Homo Deus: A Brief History of Tomorrow
+                                                        </p>
+                                                        <p className="mb-0">Yuval Noah Harari</p>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <td className="align-middle border-bottom-0">
+                                                <p className="mb-0" style={{ fontWeight: 500 }}>
+                                                    Paperback
+                                                </p>
+                                            </td>
+                                            <td className="align-middle border-bottom-0">
+                                                <div className="d-flex flex-row">
+                                                    <button
+                                                        className="btn btn-link px-2"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                    >
+                                                        <i className="fas fa-minus" />
+                                                    </button>
+                                                    <input
+                                                        id="form1"
+                                                        min={0}
+                                                        name="quantity"
+                                                        defaultValue={1}
+                                                        type="number"
+                                                        className="form-control form-control-sm"
+                                                        style={{ width: 50 }}
+                                                    />
+                                                    <button
+                                                        className="btn btn-link px-2"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                    >
+                                                        <i className="fas fa-plus" />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td className="align-middle border-bottom-0">
+                                                <p className="mb-0" style={{ fontWeight: 500 }}>
+                                                    $13.50
+                                                </p>
+                                            </td>
+                                            <td className="align-middle">
+                                                <p className="mb-0" style={{ fontWeight: 500 }}>
+                                                    <button><i class="fa-solid fa-xmark"></i> Remove </button>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>

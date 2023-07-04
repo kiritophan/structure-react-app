@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import "./CartModal.scss"
-import Button from 'react-bootstrap/Button';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { productActions } from '../../stores/slices/product.slice';
+import { productActions } from '@stores/slices/product.slice';
 import { convertToUSD } from '@mieuteacher/meomeojs';
 import { useState } from 'react';
 import {
@@ -17,6 +16,9 @@ import {
   MDBModalFooter,
 } from 'mdb-react-ui-kit';
 
+import { userLoginActions } from '@stores/slices/userLogin.slice';
+
+
 
 export default function CartModal() {
   const { id } = useParams();
@@ -26,6 +28,7 @@ export default function CartModal() {
   const navigate = useNavigate()
   useEffect(() => {
     dispatch(productActions.searchProductById(id))
+    dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
   }, [])
 
   const product = productStore.product;
@@ -34,6 +37,67 @@ export default function CartModal() {
   const [topRightModal, setTopRightModal] = useState(false);
 
   const toggleShow = () => setTopRightModal(!topRightModal);
+
+
+  const userLoginStore = useSelector(store => store.userLoginStore);
+
+  function addToCart(buyItem) {
+    console.log("da vao add");
+    if (localStorage.getItem("token")) {
+
+      let carts = [];
+      let flag = false;
+
+      carts = userLoginStore.userInfor.carts.slice().map(item => {
+        if (item.productId == buyItem.productId) {
+          let temp = { ...item };
+          temp.quantity += buyItem.quantity;
+          flag = true;
+          return temp
+        }
+
+        return item
+      })
+
+      if (!flag) {
+        carts.push(buyItem)
+      }
+
+      dispatch(userLoginActions.updateCart(
+        {
+          userId: userLoginStore.userInfor.id,
+          carts: {
+            carts: carts
+          }
+        }
+      ))
+      return
+    }
+
+    // chưa đăng nhập
+
+    if (localStorage.getItem("carts")) {
+      // đã từng có giỏ hàng
+      let carts = JSON.parse(localStorage.getItem("carts"));
+      console.log(carts);
+      let flag = false;
+      carts.map(item => {
+        if (item.productId == buyItem.productId) {
+          item.quantity += buyItem.quantity
+          flag = true;
+        }
+        return item
+      })
+      if (!flag) {
+        carts.push(buyItem)
+      }
+      localStorage.setItem("carts", JSON.stringify(carts));
+    } else {
+      // chưa từng có
+      let carts = [buyItem]
+      localStorage.setItem("carts", JSON.stringify(carts));
+    }
+  }
 
   return (
     <>
@@ -48,7 +112,15 @@ export default function CartModal() {
           <p>{convertToUSD(product.price)}</p>
           <p>Timelessly elegant in emblematic Taiga leather, Louis Vuitton's iconic Keepall holdall,
             the original soft travel bag, is a stylish and practical choice for a weekend away.</p>
-          <MDBBtn className='placeInCart' onClick={toggleShow}>Place in cart</MDBBtn>
+          <MDBBtn className='placeInCart' onClick={() => {
+            toggleShow()
+            addToCart(
+              {
+                productId: product.id,
+                quantity: 1
+              }
+            )
+          }}>Place in cart</MDBBtn>
           <MDBModal
             animationDirection='right'
             show={topRightModal}
@@ -77,7 +149,7 @@ export default function CartModal() {
                   </div>
                 </MDBModalBody>
                 <MDBModalFooter>
-                  <MDBBtn color='gray' onClick={() => navigate("/product")}>Continue Shopping</MDBBtn>
+                  <MDBBtn color='gray' onClick={toggleShow}>Continue Shopping</MDBBtn>
                   <MDBBtn color='grey' onClick={() => navigate("/mycart")}>View my Cart</MDBBtn>
                 </MDBModalFooter>
               </MDBModalContent>
@@ -89,8 +161,8 @@ export default function CartModal() {
           <a href="#" className="btn"> Product details </a>
         </div>
       </section>
-      
+
     </>
-    
+
   )
 }
