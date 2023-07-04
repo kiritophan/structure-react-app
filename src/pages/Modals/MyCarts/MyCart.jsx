@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom'
-import { productActions } from '../../../stores/slices/product.slice';
-import { userLoginActions } from '../../../stores/slices/userLogin.slice';
-
+import { productActions } from '@stores/slices/product.slice';
+import { userLoginActions } from '@stores/slices/userLogin.slice';
+import { convertToUSD } from '@mieuteacher/meomeojs';
 export default function MyCart() {
 
     const [cartData, setCartData] = useState([])
@@ -18,11 +17,7 @@ export default function MyCart() {
         dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
         dispatch(productActions.findAllProducts())
     }, [])
-
-    // console.log(userLoginStore.userInfor.carts)
-
     useEffect(() => {
-        console.log("run")
         if (userLoginStore.userInfor != null && productStore.listProducts.length > 0) {
 
             let carts = [...userLoginStore.userInfor.carts]
@@ -37,18 +32,12 @@ export default function MyCart() {
                         carts[i] = Object.assign({}, carts[i], { name: listProducts[j].name });
                     }
                 }
-
                 setCartData(carts)
             }
-
-            console.log(cartData)
-
         }
     }, [userLoginStore.userInfor])
 
     console.log(cartData)
-
-
 
     return (
         <section className="h-100 h-custom">
@@ -62,128 +51,13 @@ export default function MyCart() {
                                         <th scope="col" className="h5">
                                             Shopping Bag
                                         </th>
-                                        <th scope="col">Format</th>
+                                        <th scope="col">Brand</th>
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {/* <tr>
-                                        <th scope="row">
-                                            <div className="d-flex align-items-center">
-                                                <img
-                                                    src="https://i.imgur.com/2DsA49b.webp"
-                                                    className="img-fluid rounded-3"
-                                                    style={{ width: 120 }}
-                                                    alt="Book"
-                                                />
-                                                <div className="flex-column ms-4">
-                                                    <p className="mb-2">Thinking, Fast and Slow</p>
-                                                    <p className="mb-0">Daniel Kahneman</p>
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <td className="align-middle">
-                                            <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                Digital
-                                            </p>
-                                        </td>
-                                        <td className="align-middle">
-                                            <div className="d-flex flex-row">
-                                                <button
-                                                    className="btn btn-link px-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                >
-                                                    <i className="fas fa-minus" />
-                                                </button>
-                                                <input
-                                                    id="form1"
-                                                    min={0}
-                                                    name="quantity"
-                                                    defaultValue={2}
-                                                    type="number"
-                                                    className="form-control form-control-sm"
-                                                    style={{ width: 50 }}
-                                                />
-                                                <button
-                                                    className="btn btn-link px-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                >
-                                                    <i className="fas fa-plus" />
-                                                </button>
-                                            </div>
-                                        </td>
-                                        <td className="align-middle">
-                                            <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                $9.99
-                                            </p>
-                                        </td>
-                                        <td className="align-middle">
-                                            <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                <button><i class="fa-solid fa-xmark"></i> Remove </button>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" className="border-bottom-0">
-                                            <div className="d-flex align-items-center">
-                                                <img
-                                                    src="https://i.imgur.com/Oj1iQUX.webp"
-                                                    className="img-fluid rounded-3"
-                                                    style={{ width: 120 }}
-                                                    alt="Book"
-                                                />
-                                                <div className="flex-column ms-4">
-                                                    <p className="mb-2">
-                                                        Homo Deus: A Brief History of Tomorrow
-                                                    </p>
-                                                    <p className="mb-0">Yuval Noah Harari</p>
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <td className="align-middle border-bottom-0">
-                                            <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                Paperback
-                                            </p>
-                                        </td>
-                                        <td className="align-middle border-bottom-0">
-                                            <div className="d-flex flex-row">
-                                                <button
-                                                    className="btn btn-link px-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                >
-                                                    <i className="fas fa-minus" />
-                                                </button>
-                                                <input
-                                                    id="form1"
-                                                    min={0}
-                                                    name="quantity"
-                                                    defaultValue={1}
-                                                    type="number"
-                                                    className="form-control form-control-sm"
-                                                    style={{ width: 50 }}
-                                                />
-                                                <button
-                                                    className="btn btn-link px-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                >
-                                                    <i className="fas fa-plus" />
-                                                </button>
-                                            </div>
-                                        </td>
-                                        <td className="align-middle border-bottom-0">
-                                            <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                $13.50
-                                            </p>
-                                        </td>
-                                        <td className="align-middle">
-                                            <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                <button><i class="fa-solid fa-xmark"></i> Remove </button>
-                                            </p>
-                                        </td>
-                                    </tr> */}
-
                                     {cartData?.map((item) => 
                                         <tr>
                                             <th scope="row" className="border-bottom-0">
@@ -196,7 +70,7 @@ export default function MyCart() {
                                                     />
                                                     <div className="flex-column ms-4">
                                                         <p className="mb-2">
-                                                            Homo Deus: A Brief History of Tomorrow
+                                                            {cartData.des}
                                                         </p>
                                                         <p className="mb-0">Yuval Noah Harari</p>
                                                     </div>
@@ -204,7 +78,7 @@ export default function MyCart() {
                                             </th>
                                             <td className="align-middle border-bottom-0">
                                                 <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    Paperback
+                                                    adidas
                                                 </p>
                                             </td>
                                             <td className="align-middle border-bottom-0">
@@ -234,7 +108,7 @@ export default function MyCart() {
                                             </td>
                                             <td className="align-middle border-bottom-0">
                                                 <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    $13.50
+                                                    {convertToUSD(cartData.price)}
                                                 </p>
                                             </td>
                                             <td className="align-middle">

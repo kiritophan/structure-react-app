@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productActions } from '@stores/slices/product.slice';
 import { convertToUSD } from '@mieuteacher/meomeojs';
 import { useState } from 'react';
+import { userLoginActions } from '@stores/slices/userLogin.slice';
 import {
   MDBBtn,
   MDBModal,
@@ -15,9 +16,6 @@ import {
   MDBModalBody,
   MDBModalFooter,
 } from 'mdb-react-ui-kit';
-
-import { userLoginActions } from '@stores/slices/userLogin.slice';
-
 
 
 export default function CartModal() {

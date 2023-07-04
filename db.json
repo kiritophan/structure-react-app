@@ -12,7 +12,7 @@
       "carts": [
         {
           "productId": 1,
-          "quantity": 5
+          "quantity": 6
         },
         {
           "productId": 19,
@@ -21,6 +21,18 @@
         {
           "productId": 41,
           "quantity": 3
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        },
+        {
+          "productId": 18,
+          "quantity": 1
+        },
+        {
+          "productId": 23,
+          "quantity": 1
         }
       ]
     },
