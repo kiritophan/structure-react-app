@@ -39,6 +39,13 @@ export default function MyCart() {
 
     console.log(cartData)
 
+    function calCartPrice() {
+        let totalPrice = 0;
+        for (let i = 0; i < cartData.length; i++) {
+            totalPrice += cartData[i].price;
+        }
+        return totalPrice;
+    }
     return (
         <section className="h-100 h-custom">
             <div className="container h-100 py-5">
@@ -63,7 +70,7 @@ export default function MyCart() {
                                             <th scope="row" className="border-bottom-0">
                                                 <div className="d-flex align-items-center">
                                                     <img
-                                                        src="https://i.imgur.com/Oj1iQUX.webp"
+                                                        src={item.url}
                                                         className="img-fluid rounded-3"
                                                         style={{ width: 120 }}
                                                         alt="Book"
@@ -78,7 +85,7 @@ export default function MyCart() {
                                             </th>
                                             <td className="align-middle border-bottom-0">
                                                 <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    adidas
+                                                    {item.name}
                                                 </p>
                                             </td>
                                             <td className="align-middle border-bottom-0">
@@ -93,7 +100,7 @@ export default function MyCart() {
                                                         id="form1"
                                                         min={0}
                                                         name="quantity"
-                                                        defaultValue={1}
+                                                        defaultValue={item.quantity}
                                                         type="number"
                                                         className="form-control form-control-sm"
                                                         style={{ width: 50 }}
@@ -108,7 +115,7 @@ export default function MyCart() {
                                             </td>
                                             <td className="align-middle border-bottom-0">
                                                 <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    {convertToUSD(cartData.price)}
+                                                    {convertToUSD(item.price*item.quantity)}
                                                 </p>
                                             </td>
                                             <td className="align-middle">
@@ -254,14 +261,14 @@ export default function MyCart() {
                                             style={{ fontWeight: 500 }}
                                         >
                                             <p className="mb-2">Subtotal</p>
-                                            <p className="mb-2">$23.49</p>
+                                            <p className="mb-2">{convertToUSD(calCartPrice())}</p>
                                         </div>
                                         <div
                                             className="d-flex justify-content-between"
                                             style={{ fontWeight: 500 }}
                                         >
                                             <p className="mb-0">Shipping</p>
-                                            <p className="mb-0">$2.99</p>
+                                            <p className="mb-0">$0</p>
                                         </div>
                                         <hr className="my-4" />
                                         <div
@@ -269,7 +276,7 @@ export default function MyCart() {
                                             style={{ fontWeight: 500 }}
                                         >
                                             <p className="mb-2">Total (tax included)</p>
-                                            <p className="mb-2">$26.48</p>
+                                            <p className="mb-2">  {convertToUSD(calCartPrice())} </p>
                                         </div>
                                         <button
                                             type="button"
@@ -277,7 +284,7 @@ export default function MyCart() {
                                         >
                                             <div className="d-flex justify-content-between">
                                                 <span>Checkout</span>
-                                                <span>$26.48</span>
+                                                <span> {convertToUSD(calCartPrice())} </span>
                                             </div>
                                         </button>
                                     </div>
