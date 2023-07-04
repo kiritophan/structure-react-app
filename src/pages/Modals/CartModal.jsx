@@ -31,21 +31,17 @@ export default function CartModal() {
 
   const product = productStore.product;
 
-  // console.log(id)
   const [topRightModal, setTopRightModal] = useState(false);
 
   const toggleShow = () => setTopRightModal(!topRightModal);
-
 
   const userLoginStore = useSelector(store => store.userLoginStore);
 
   function addToCart(buyItem) {
     console.log("da vao add");
     if (localStorage.getItem("token")) {
-
       let carts = [];
       let flag = false;
-
       carts = userLoginStore.userInfor.carts.slice().map(item => {
         if (item.productId == buyItem.productId) {
           let temp = { ...item };
@@ -53,7 +49,6 @@ export default function CartModal() {
           flag = true;
           return temp
         }
-
         return item
       })
 
@@ -71,9 +66,7 @@ export default function CartModal() {
       ))
       return
     }
-
     // chưa đăng nhập
-
     if (localStorage.getItem("carts")) {
       // đã từng có giỏ hàng
       let carts = JSON.parse(localStorage.getItem("carts"));
@@ -100,7 +93,6 @@ export default function CartModal() {
   return (
     <>
       <section className="cartDetail" id="about">
-
         <div className="image">
           <img src={product.url} alt="" />
         </div>
