@@ -3,15 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productActions } from '@stores/slices/product.slice';
 import { userLoginActions } from '@stores/slices/userLogin.slice';
 import { convertToUSD } from '@mieuteacher/meomeojs';
+import CartItem from './CartItem';
 export default function MyCart() {
 
     const [cartData, setCartData] = useState([])
+
+    const [quantity, setQuantity] = useState()
 
     const dispatch = useDispatch();
 
     const userLoginStore = useSelector(store => store.userLoginStore);
 
     const productStore = useSelector(store => store.productStore)
+    console.log("productStore", productStore)
 
     useEffect(() => {
         dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
@@ -25,7 +29,7 @@ export default function MyCart() {
         }
     }, [userLoginStore.userInfor])
 
-    console.log(cartData)
+    console.log("cartData", cartData)
 
     function calCartPrice() {
         let totalPrice = 0;
@@ -34,7 +38,6 @@ export default function MyCart() {
         }
         return totalPrice;
     }
-
 
     function handleDeleteProduct(productId) {
         let carts = userLoginStore.userInfor.carts
@@ -50,19 +53,14 @@ export default function MyCart() {
         ))
     }
 
-    function handleDecreaseQuantity() {
-        
-    }
+    // function getProductInfo(productCartId) {
+    //     return cartData.find((product) => product.productId === productCartId)
+    // }
 
-    function handleIncreaseQuantity() {
-       
-    }
+    // function handleIncreaseProduct(productId) {
+    //     let carts = userLoginStore.userInfor.carts;
 
-    function updatePriceAndSubtotal() {
-       
-    }
-
-
+    // }
 
     return (
         <section className="h-100 h-custom">
@@ -83,67 +81,72 @@ export default function MyCart() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {cartData?.map((item) =>
-                                        <tr key={item.productId}>
-                                            <th scope="row" className="border-bottom-0">
-                                                <div className="d-flex align-items-center">
-                                                    <img
-                                                        src={item.url}
-                                                        className="img-fluid rounded-3"
-                                                        style={{ width: 120 }}
-                                                        alt="Book"
-                                                    />
-                                                    <div className="flex-column ms-4">
-                                                        <p className="mb-2">
-                                                            {cartData.des}
-                                                        </p>
-                                                        <p className="mb-0">Yuval Noah Harari</p>
+                                    {/* {cartData?.map((item) =>
+                                    (
+                                        getProductInfo((item.productId)) ?
+                                            <tr key={item.productId}>
+                                                <th scope="row" className="border-bottom-0">
+                                                    <div className="d-flex align-items-center">
+                                                        <img
+                                                            src={getProductInfo((item.productId)).url}
+                                                            className="img-fluid rounded-3"
+                                                            style={{ width: 120 }}
+                                                            alt="Book"
+                                                        />
+                                                        <div className="flex-column ms-4">
+                                                            <p className="mb-2">
+                                                                {cartData.des}
+                                                            </p>
+                                                            <p className="mb-0">Yuval Noah Harari</p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </th>
-                                            <td className="align-middle border-bottom-0">
-                                                <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    {item.name}
-                                                </p>
-                                            </td>
-                                            <td className="align-middle border-bottom-0">
-                                                <div className="d-flex flex-row">
-                                                    <button
-                                                        className="btn btn-link px-2"
-                                                        onClick={() => handleDecreaseQuantity(item.productId)} 
-                                                    >
-                                                        <i className="fas fa-minus" />
-                                                    </button>
-                                                    <input
-                                                        id="form1"
-                                                        min="0"
-                                                        name="quantity"
-                                                        defaultValue={item.quantity}
-                                                        type="number"
-                                                        className="form-control form-control-sm"
-                                                        style={{ width: 50 }}
-                                                    />
-                                                    <button
-                                                        className="btn btn-link px-2"
-                                                        onClick={() => handleIncreaseQuantity(item.productId)}
-                                                    >
-                                                        <i className="fas fa-plus"  />
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            <td className="align-middle border-bottom-0">
-                                                <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    {convertToUSD(item.price * item.quantity)}
-                                                </p>
-                                            </td>
-                                            <td className="align-middle">
-                                                <p className="mb-0" style={{ fontWeight: 500 }}>
-                                                    <button onClick={() => handleDeleteProduct(item.productId)}><i class="fa-solid fa-xmark"></i> Remove </button>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    )}
+                                                </th>
+                                                <td className="align-middle border-bottom-0">
+                                                    <p className="mb-0" style={{ fontWeight: 500 }}>
+                                                        {getProductInfo((item.productId)).name}
+                                                    </p>
+                                                </td>
+                                                <td className="align-middle border-bottom-0">
+                                                    <div className="d-flex flex-row">
+                                                        <button
+                                                            className="btn btn-link px-2"
+
+                                                        >
+                                                            <i className="fas fa-minus" />
+                                                        </button>
+                                                        <span id="form1"
+                                                            min="0"
+                                                            name="quantity"
+                                                            // value={item.quantity}
+                                                            type="text"
+                                                            className="form-control form-control-sm"
+                                                            style={{ width: 50 }}>{item.quantity}</span>
+
+
+                                                        <button
+                                                            className="btn btn-link px-2"
+                                                            onClick={() => handleIncreaseProduct(item.productId)}
+                                                        >
+                                                            <i className="fas fa-plus" />
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td className="align-middle border-bottom-0">
+                                                    <p className="mb-0" style={{ fontWeight: 500 }}>
+                                                        {convertToUSD(item.price * item.quantity)}
+                                                    </p>
+                                                </td>
+                                                <td className="align-middle">
+                                                    <p className="mb-0" style={{ fontWeight: 500 }}>
+                                                        <button onClick={() => handleDeleteProduct(item.productId)}><i class="fa-solid fa-xmark"></i> Remove </button>
+                                                    </p>
+                                                </td>
+                                            </tr> : <></>
+                                    )
+                                    )} */}
+                                    {cartData?.map((item) => <CartItem item={item} cartData={cartData} setCartData={setCartData} />)}
                                 </tbody>
+
                             </table>
                         </div>
                         <div
@@ -309,6 +312,8 @@ export default function MyCart() {
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>

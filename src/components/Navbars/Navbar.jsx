@@ -18,7 +18,6 @@ export default function Navbar() {
         <header className="header">
             <Link to="/" className="logo"> <img style={{ width: '50%', height: 'auto' }} src="../image/header-logo-snkrdunk.png" alt="" /> </Link>
             <nav className="navbar">
-                <Link to="/">Home</Link>
                 <div className="dropdown">
                     <button
                         className="btn btn-primary dropdown-toggle menu-button"
@@ -41,18 +40,16 @@ export default function Navbar() {
                 </div>
                 <a href="#about" onClick={() => navigate("/")}>About</a>
                 <a href="#blogs" onClick={() => navigate("/")}>NEW ARTICLES</a>
-                <a href="#order">HYPE DROP</a>
+                <input style={{border: '1px solid black'}}></input>
             </nav>
             <div className="icons d-flex">
                 <div id="menu-btn" className="fas fa-bars"></div>
-
                 <div id="search-btn" className="fas fa-search"></div>
                 <div id="cart-btn">
                     <Button variant="dark" onClick={handleShow} >
                         <i class="fa-solid fa-cart-shopping"></i>
                     </Button>
                 </div>
-
                 <div id="login-btn" className="fas fa-user" onClick={() => navigate("/login")}></div>
                 <Cart show={show} handleClose={handleClose} />
             </div>

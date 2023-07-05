@@ -11,25 +11,25 @@
       "avatar": "https://firebasestorage.googleapis.com/v0/b/learnfirebase-afb02.appspot.com/o/userAvatars%2Fadmin.jpg?alt=media&token=3482a408-7ed1-41c6-b18f-eb730dc02623",
       "carts": [
         {
-          "productId": 2,
-          "quantity": 3,
-          "url": "../image/balenciaga/speed/balenciaga_speed_2.jpeg",
+          "productId": 12,
+          "quantity": 6,
+          "url": "../image/louis_vuitton/lv_04.jpeg",
+          "name": "Louis Vuitton",
+          "price": 1500
+        },
+        {
+          "productId": 1,
+          "quantity": 5,
+          "url": "../image/balenciaga/speed/balenciaga_speed_1.jpeg",
           "name": "Balenciaga",
           "price": 1500
         },
         {
-          "productId": 9,
-          "quantity": 2,
-          "url": "../image/louis_vuitton/lv_01.jpeg",
-          "name": "Louis Vuitton",
-          "price": 1500
-        },
-        {
-          "productId": 12,
-          "quantity": 1,
-          "url": "../image/louis_vuitton/lv_04.jpeg",
-          "name": "Louis Vuitton",
-          "price": 1500
+          "productId": 19,
+          "quantity": 3,
+          "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_3.jpeg",
+          "name": "Nike",
+          "price": 150
         }
       ]
     },
