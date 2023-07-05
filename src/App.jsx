@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import LazyLoad from './LazyLoad'
 import Navbar from '@components/Navbars/Navbar'
 import Footer from './components/Footers/Footer';
-import Article from './components/Articles/Article';
+// import Article from './components/Articles/Article';
 
 function App() {
   return (

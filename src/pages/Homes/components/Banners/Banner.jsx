@@ -37,9 +37,6 @@ export default function Banner() {
                         <span className="history">{banner.urlHistory.toUpperCase()}</span>
                         <span className="des">{banner.des}</span>
                     </div>
-                    <button type="button" class="btn btn-success order-now">
-                        Order Now
-                    </button>
                 </div>
             ))}
         </Carousel>

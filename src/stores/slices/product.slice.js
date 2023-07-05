@@ -17,6 +17,14 @@ const searchProductById = createAsyncThunk(
     }
 )
 
+const searchProductByName = createAsyncThunk(
+    "searchProductByName",
+
+    async (name) => {
+        let res = await axios.get(`${process.env.REACT_APP_SERVER_JSON}products?name_like=${name}`)
+        return res.data
+    }
+)
 
 const productSlice = createSlice(
     {
@@ -24,7 +32,7 @@ const productSlice = createSlice(
         initialState: {
             listProducts: [],
             product: {},
-            cart: []
+            cart: [],
         },
         extraReducers: (builder) => {
             // find all products
@@ -37,6 +45,10 @@ const productSlice = createSlice(
                 // console.log(action.payload);
                 state.product = { ...action.payload };
             });
+            builder.addCase(searchProductByName.fulfilled, (state, action) => {
+                console.log(action.payload);
+                state.searchData = [...action.payload]
+            })
         }
     }
 )
@@ -45,5 +57,6 @@ export const productActions = {
     ...productSlice.actions,
     findAllProducts,
     searchProductById,
+    searchProductByName
 }
 export default productSlice.reducer;

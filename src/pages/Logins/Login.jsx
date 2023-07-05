@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
     const navigate = useNavigate();
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const userLoginStore = useSelector(store => store.userLoginStore);
 
     useEffect(() => {
@@ -31,7 +31,6 @@ export default function Login() {
                     alert("vui lòng điền đầy đủ các trường")
                     return
                 }
-
                 dispatch(userLoginActions.login(
                     {
                         userName: eventForm.target.inputUserName.value,
@@ -74,6 +73,7 @@ export default function Login() {
                     />
                 </div>
                 <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-dark" onClick={() => navigate('/register')}>Sign up</button>
             </form>
         </div>
     )
