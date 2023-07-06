@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "./Menu.scss"
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -20,15 +20,10 @@ function MenuModal() {
             <Button variant="white" onClick={handleShowTop} >
                 <i class="fa-solid fa-bars" style={{ color: '#000000' }}></i>
             </Button>
-            <div className='menuNavbar'><Link style={{color: 'black'}} to= "/" >Menu</Link></div>
+            <div className='menuNavbar'><Link style={{ color: 'black' }} to="/" >Menu</Link></div>
             <Offcanvas show={show} onHide={handleCloseTop}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title >
-                        <div className="input-group">
-                            <button type="button" className="btn btn-outline-dark">
-                                Close
-                            </button>
-                        </div>
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -36,19 +31,19 @@ function MenuModal() {
                         <div className='feature'></div>
                         <section className="about" id="about">
                             <div className='top-menu-container'>
-                                <div className="icons">
+                                <div className="icons leftIcons">
                                     <h3>Menu</h3>
                                 </div>
-                                <div className="icons">
+                                <div className="icons allShoesIcons">
                                     <h3>
-                                        <div>
+                                        <div className='dropdown-menuIcons'>
                                             {['end'].map(
                                                 (direction) => (
                                                     <SplitButton
                                                         key={direction}
                                                         id={`dropdown-button-drop-${direction}`}
                                                         drop={direction}
-                                                        variant="secondary"
+                                                        variant="dark"
                                                         title={`ALL SHOES`}
                                                     >
                                                         <Dropdown.Item eventKey="1"><Link to="/menu/balenciaga"><a className="dropdown-item">Balenciaga</a></Link></Dropdown.Item>
@@ -63,43 +58,25 @@ function MenuModal() {
                                         </div>
                                     </h3>
                                 </div>
-                                
-                                <div className="icons">
+
+                                <div className="icons leftIcons">
                                     <a href="#featured" style={{ position: 'relative' }} onClick={() => navigate("/")}>FEATURE</a>
                                 </div>
-                                <div className="icons">
+                                <div className="icons leftIcons">
                                     <a href="#blogs" style={{ position: 'relative' }} onClick={() => navigate("/")}>NEW ARTICLES</a>
                                 </div>
-                                <div className="icons">
+                                <div className="icons leftIcons">
                                     <h3><a href="#footers" onClick={() => navigate("/")}>SERVICES</a></h3>
                                 </div>
-                                <div className="icons">
+                                <div className="icons leftIcons">
                                     <h3><a href="#footers" onClick={() => navigate("/contact")}>CONTACT US</a></h3>
                                 </div>
                             </div>
 
-                            <div className="content" style={{ width: '30%' }}>
+                            <div className="content">
                                 <div className="icons-container" >
-                                    <div className="icons" >
-                                        <img src="" alt="" />
-                                        <h1>SNKRDUNK</h1><br></br>
-
-                                    </div>
-                                    <div className="icons" style={{ flexDirection: 'column' }} >
-                                        <h2></h2>
-                                        <h2></h2>
-                                    </div>
-                                    <div className="icons">
-                                        <img src="" alt="" />
-                                        <h3></h3>
-                                    </div>
-                                    <div className="icons">
-                                        <img src="" alt="" />
-                                        <a style={{
-                                            cursor: 'pointer', border: '1px solid black',
-                                            width: '80px', height: '40px', display: 'flex', borderRadius: '10px',
-                                            justifyContent: 'center', alignItems: 'center'
-                                        }}>READ MORE</a>
+                                    <div className="icons" style={{}}>
+                                        <Link to="/" className="logo"> <img style={{ width: '100%', height: 'auto' }} src="../image/header-logo-snkrdunk.png" alt="" /> </Link>
                                     </div>
                                 </div>
                             </div>
