@@ -13,7 +13,8 @@ export default function Navbar() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+
     const [isLogin, setIsLogin] = useState(() => localStorage.getItem("token") || null)
 
     const userLoginStore = useSelector(store => store.userLoginStore)
@@ -81,11 +82,11 @@ export default function Navbar() {
                 {
                     isLogin ? (
                         <>
-                            <div id="logout-btn" className="fas fa-user" onClick={handleLogout} ></div>
+                            <div onClick={handleLogout} ><i class="fa-solid fa-right-from-bracket"></i></div>
                         </>
-                    ) : <>
-                        <div id="login-btn" className="fas fa-user" onClick={() => navigate("/login")}></div>
-                    </>
+                    ) : (<>
+                            <div onClick={() => navigate("/login")}><i class="fa-solid fa-right-to-bracket"></i></div>
+                    </>)
                 }
                 <Cart show={show} handleClose={handleClose} />
             </div>

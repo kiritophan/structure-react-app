@@ -13,6 +13,15 @@ const login = createAsyncThunk(
         }
     }
 )
+
+const register = createAsyncThunk(
+    "register",
+    async (inforRegister) => {
+        let res = await axios.post(process.env.REACT_APP_SERVER_JSON + 'users', inforRegister)
+        return res.data;
+    }
+)
+
 const checkTokenLocal = createAsyncThunk(
     "checkTokenLocal",
     async (token) => {
@@ -64,6 +73,11 @@ const userLoginSlice = createSlice(
             userInfor: null
         },
         reducers: {
+            logOut: (state, action) => {
+                return {
+                    ...state, userInfor: null
+                }
+            }
         },
         extraReducers: (builder) => {
             // login
@@ -100,6 +114,17 @@ const userLoginSlice = createSlice(
                 state.userInfor = action.payload
                 localStorage.removeItem("carts")
             });
+
+            //register 
+
+            builder.addCase(register.fulfilled, (state, action) => {
+                state.userInfor = action.payload;
+                console.log("register",action.payload)
+                //ma hoa du lieu
+                let token = createToken(action.payload, process.env.REACT_APP_JWT_KEY);
+                localStorage.setItem("token", token);
+            });
+
             // xử lý các pending và rejected
             builder.addMatcher(
                 (action) => {
@@ -136,6 +161,7 @@ export const userLoginActions = {
     ...userLoginSlice.actions,
     login,
     checkTokenLocal,
-    updateCart
+    updateCart,
+    register
 }
 export default userLoginSlice.reducer;
