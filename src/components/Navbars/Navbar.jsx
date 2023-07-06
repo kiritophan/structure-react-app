@@ -1,49 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import "./Navbar.scss"
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router'
 import Cart from '@pages/Carts/Cart';
 import Button from 'react-bootstrap/Button';
-import { useDispatch, useSelector } from 'react-redux';
-import { userLoginActions } from '@stores/slices/userLogin.slice';
-import { productActions } from '@stores/slices/product.slice';
 import SearchModal from '../Searchs/SearchModal';
-
-
 
 export default function Navbar() {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const userLoginStore = useSelector(store => store.userLoginStore);
-    const productStore = useSelector(store => store.productStore);
-
-    const [showSearch, setShowSearch] = useState(false);
-    
-    const [timeOutTarget, setTimeOutTarget] = useState(null);
-
-    const handleChange = (e) => {
-        clearTimeout(timeOutTarget);  // huy cac timeout da duoc dat ra truoc do
-        setTimeOutTarget(setTimeout(() => {
-            if (!userLoginStore.loading) {
-                if (e.target.value != "") {
-                    setShowSearch(true)
-                    dispatch(productActions.searchProductByName(e.target.value))
-                }
-                if (e.target.value == "") {
-                    setShowSearch(false)
-                }
-            }
-        }, 500));
-    }
-
-    console.log("search",productStore.searchData);
-
-
 
     return (
         <header className="header">
@@ -71,11 +38,6 @@ export default function Navbar() {
                 </div>
                 <a href="#about" onClick={() => navigate("/")}>About</a>
                 <a href="#blogs" style={{ position: 'relative' }} onClick={() => navigate("/")}>NEW ARTICLES</a>
-                <input
-                    onChange={(e) => handleChange(e)}
-                    type='text'
-                    className='search-item' placeholder='...Search'
-                />
             </nav>
             <div className="icons d-flex">
                 <div id="menu-btn" className="fas fa-bars"></div>
@@ -87,17 +49,7 @@ export default function Navbar() {
                 </div>
                 <div id="login-btn" className="fas fa-user" onClick={() => navigate("/login")}></div>
                 <Cart show={show} handleClose={handleClose} />
-                
             </div>
-            {showSearch ? (productStore.searchData?.map((item) =>
-                <div className='searchItem'>
-                    <img width='100px' height='100px' src={item.url}></img>
-                    <div>
-                        <p>{item.name}</p>
-                        <p>{item.price}</p>
-                    </div>
-                </div>)) : (<></>)
-                }
         </header>
     )
 }

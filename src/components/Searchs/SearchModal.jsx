@@ -1,39 +1,96 @@
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import "./SearchModal.scss"
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { productActions } from '@stores/slices/product.slice';
+import { convertToUSD } from '@mieuteacher/meomeojs';
 
 function SearchModal() {
   const [show, setShow] = useState(false);
 
   const handleCloseTop = () => setShow(false);
   const handleShowTop = () => setShow(true);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+
+  const userLoginStore = useSelector(store => store.userLoginStore);
+  const productStore = useSelector(store => store.productStore);
+
+  const [showSearch, setShowSearch] = useState(false);
+
+  const [timeOutTarget, setTimeOutTarget] = useState(null);
+
+  const handleChange = (e) => {
+    clearTimeout(timeOutTarget);  // huy cac timeout da duoc dat ra truoc do
+    setTimeOutTarget(setTimeout(() => {
+      if (!userLoginStore.loading) {
+        if (e.target.value != "") {
+          setShowSearch(true)
+          dispatch(productActions.searchProductByName(e.target.value))
+        }
+        if (e.target.value == "") {
+          setShowSearch(false)
+        }
+      }
+    }, 500));
+  }
+
+  console.log("search", productStore.searchData);
   return (
     <>
       <Button variant="white" onClick={handleShowTop} >
         <div id="search-btn" className="fas fa-search"></div>
       </Button>
-      <Offcanvas show={show} onHide={handleCloseTop} placement="top">
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>
-            <div className="input-group">
+      <Offcanvas style={{ height: '50%' }} show={show} onHide={handleCloseTop} placement="top">
+        <Offcanvas.Header closeButton style={{ display: 'flex', justifyContent: 'center'}}>
+          <Offcanvas.Title >
+            <div className="input-group" style={{width: '600px'}}>
               <input
-                type="search"
-                className="form-control rounded"
-                placeholder="Search"
+                className="form-control rounded search-item"
                 aria-label="Search"
                 aria-describedby="search-addon"
+                onChange={(e) => handleChange(e)}
+                type='text'
+                placeholder='...Search'
               />
-              <button type="button" className="btn btn-outline-primary">
+              <button type="button" className="btn btn-outline-dark">
                 search
               </button>
             </div>
           </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-        </Offcanvas.Body>
+       
+        <Offcanvas.Body> {showSearch ? (productStore.searchData?.map((item) => 
+        <>
+          <div className='feature'>{item.name}</div>
+          <section className="about" id="about">
+            <div className="image" >
+                <img src={item.url} alt="" style={{ width: '50%'}} />
+            </div>
+              <div className="content" style={{ width: '50%'}}>
+              <div className="icons-container" >
+                <div className="icons" >
+                  <img src="" alt="" />
+                  <h1>SNKRDUNK</h1>
+                  <h2>{item.name}</h2>
+                    <h2>{convertToUSD(item.price)}</h2>
+                </div>
+                <div className="icons">
+                  <img src="" alt="" />
+                  <h3>{item.des}</h3>
+                </div>
+                <div className="icons">
+                  <img src="" alt="" />
+                    <a onClick={() => navigate(`/product/${item.id}`)}>READ MORE</a>
+                </div>
+              </div>
+            </div>
+          </section> 
+          </>)) : (<></>)}
+        </Offcanvas.Body> 
       </Offcanvas>
     </>
   );
