@@ -35,8 +35,8 @@ const Contact = () => {
         <section>
             <div className={`container ${styles.contact}`}>
                 <h2>Contact Us</h2>
-                <div className={styles.section}>
-                    <div className={styles.details}>
+                <div className="contact--child">
+                    <div className="contact-child-1">
                         <Card cardClass={styles.card2}>
                             <h3>Our Contact Information</h3>
                             <p>
@@ -71,7 +71,7 @@ const Contact = () => {
                             referrerpolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
-                    <form ref={form} onSubmit={sendEmail}>
+                    <form ref={form} onSubmit={sendEmail} className="form-container">
                         <Card cardClass={styles.card}>
                             <label>Name</label>
                             <input

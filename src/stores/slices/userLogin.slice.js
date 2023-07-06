@@ -35,6 +35,8 @@ const updateCart = createAsyncThunk(
     }
 )
 
+
+
 function createToken(userObj, privateKey) {
     return CryptoJS.AES.encrypt(JSON.stringify(userObj), privateKey).toString();
 }
@@ -52,6 +54,7 @@ function checkToken(token, privateKey, keyEnv) {
         return false
     }
 }
+
 
 const userLoginSlice = createSlice(
     {

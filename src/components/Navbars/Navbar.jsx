@@ -1,16 +1,47 @@
-import React, {  useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Navbar.scss"
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router'
 import Cart from '@pages/Carts/Cart';
 import Button from 'react-bootstrap/Button';
 import SearchModal from '../Searchs/SearchModal';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLoginActions } from '@stores/slices/userLogin.slice';
 
 export default function Navbar() {
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const dispatch = useDispatch()
+    const [isLogin, setIsLogin] = useState(() => localStorage.getItem("token") || null)
+
+    const userLoginStore = useSelector(store => store.userLoginStore)
+
+    useEffect(() => {
+        checkIsLogin();
+    }, [])
+
+    function checkIsLogin() {
+        const token = localStorage.getItem("token")
+        setIsLogin(token);
+    }
+
+    const handleLogout = () => {
+        if (window.confirm("Do you like Logout")) {
+            localStorage.removeItem("token");
+            dispatch(userLoginActions.logOut());
+            navigate("/login");
+        }
+    }
+
+    useEffect(() => {
+        checkIsLogin();
+    }, [userLoginStore])
+
+    useEffect(() => {
+        dispatch(userLoginActions.checkTokenLocal(localStorage.getItem("token")))
+    }, [])
 
     return (
         <header className="header">
@@ -41,13 +72,21 @@ export default function Navbar() {
             </nav>
             <div className="icons d-flex">
                 <div id="menu-btn" className="fas fa-bars"></div>
-                <SearchModal/>
+                <SearchModal />
                 <div id="cart-btn">
                     <Button variant="dark" onClick={handleShow} >
                         <i class="fa-solid fa-cart-shopping"></i>
                     </Button>
                 </div>
-                <div id="login-btn" className="fas fa-user" onClick={() => navigate("/login")}></div>
+                {
+                    isLogin ? (
+                        <>
+                            <div id="logout-btn" className="fas fa-user" onClick={handleLogout} ></div>
+                        </>
+                    ) : <>
+                        <div id="login-btn" className="fas fa-user" onClick={() => navigate("/login")}></div>
+                    </>
+                }
                 <Cart show={show} handleClose={handleClose} />
             </div>
         </header>
