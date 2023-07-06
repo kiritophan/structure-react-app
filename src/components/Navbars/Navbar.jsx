@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLoginActions } from '@stores/slices/userLogin.slice';
 import { productActions } from '@stores/slices/product.slice';
+import SearchModal from '../Searchs/SearchModal';
+
 
 
 export default function Navbar() {
@@ -16,6 +18,7 @@ export default function Navbar() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
     const userLoginStore = useSelector(store => store.userLoginStore);
     const productStore = useSelector(store => store.productStore);
 
@@ -39,6 +42,7 @@ export default function Navbar() {
     }
 
     console.log("search",productStore.searchData);
+
 
 
     return (
@@ -75,7 +79,7 @@ export default function Navbar() {
             </nav>
             <div className="icons d-flex">
                 <div id="menu-btn" className="fas fa-bars"></div>
-                <div id="search-btn" className="fas fa-search"></div>
+                <SearchModal/>
                 <div id="cart-btn">
                     <Button variant="dark" onClick={handleShow} >
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -83,10 +87,11 @@ export default function Navbar() {
                 </div>
                 <div id="login-btn" className="fas fa-user" onClick={() => navigate("/login")}></div>
                 <Cart show={show} handleClose={handleClose} />
+                
             </div>
             {showSearch ? (productStore.searchData?.map((item) =>
                 <div className='searchItem'>
-                    <img width='10px' height='10px' src={item.url}></img>
+                    <img width='100px' height='100px' src={item.url}></img>
                     <div>
                         <p>{item.name}</p>
                         <p>{item.price}</p>

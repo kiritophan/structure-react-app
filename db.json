@@ -18,10 +18,10 @@
           "price": 150
         },
         {
-          "productId": 1,
+          "productId": 12,
           "quantity": 1,
-          "url": "../image/balenciaga/speed/balenciaga_speed_1.jpeg",
-          "name": "Balenciaga",
+          "url": "../image/louis_vuitton/lv_04.jpeg",
+          "name": "Louis Vuitton",
           "price": 1500
         }
       ]
