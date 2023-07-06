@@ -42,7 +42,7 @@ function SearchModal() {
   return (
     <>
       <Button variant="white" onClick={handleShowTop} >
-        <div id="search-btn" className="fas fa-search"></div>
+        <i class="fa-solid fa-magnifying-glass fa-beat" style={{color: '#000000'}}></i>
       </Button>
       <Offcanvas style={{ height: '70%' }} show={show} onHide={handleCloseTop} placement="top">
         <Offcanvas.Header closeButton style={{ display: 'flex', justifyContent: 'center' }}>

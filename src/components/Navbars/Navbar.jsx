@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import SearchModal from '../Searchs/SearchModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLoginActions } from '@stores/slices/userLogin.slice';
+import MenuModal from './Menus/Menu';
 
 export default function Navbar() {
     const navigate = useNavigate();
@@ -46,9 +47,11 @@ export default function Navbar() {
 
     return (
         <header className="header">
+            <MenuModal/>
+            <SearchModal /> 
             <Link to="/" className="logo"> <img style={{ width: '50%', height: 'auto' }} src="../image/header-logo-snkrdunk.png" alt="" /> </Link>
             <nav className="navbar">
-                <div className="dropdown">
+                {/* <div className="dropdown">
                     <button
                         className="btn btn-primary dropdown-toggle menu-button"
                         type="button"
@@ -67,13 +70,13 @@ export default function Navbar() {
                         <Link to="/menu/adidas"><a className="dropdown-item">Adidas</a></Link>
                         <Link to="/menu/vans"><a className="dropdown-item">Vans</a></Link>
                     </ul>
-                </div>
-                <a href="#about" onClick={() => navigate("/")}>About</a>
-                <a href="#blogs" style={{ position: 'relative' }} onClick={() => navigate("/")}>NEW ARTICLES</a>
+                </div> */}
+                {/* <a href="#about" onClick={() => navigate("/")}>About</a> */}
+                {/* <a href="#blogs" style={{ position: 'relative' }} onClick={() => navigate("/")}>NEW ARTICLES</a> */}
             </nav>
             <div className="icons d-flex">
                 <div id="menu-btn" className="fas fa-bars"></div>
-                <SearchModal />
+                
                 <div id="cart-btn">
                     <Button variant="dark" onClick={handleShow} >
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -85,7 +88,7 @@ export default function Navbar() {
                             <div onClick={handleLogout} ><i class="fa-solid fa-right-from-bracket"></i></div>
                         </>
                     ) : (<>
-                            <div onClick={() => navigate("/login")}><i class="fa-solid fa-right-to-bracket"></i></div>
+                            <div onClick={() => navigate("/login")}><i class="fa-solid fa-user-tie"></i></div>
                     </>)
                 }
                 <Cart show={show} handleClose={handleClose} />

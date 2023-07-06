@@ -6,7 +6,7 @@ export default function Footer() {
     const navigate = useNavigate()
     return (
         <>
-            <footer className="bg-Light text-center text-dark footer" style={{fontSize: '16px'}}>
+            <footer id='footers' className="bg-Light text-center text-dark footer" style={{fontSize: '16px'}}>
                 <div className="container p-4">
                     <section className="mb-4">
                         <a

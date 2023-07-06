@@ -6,7 +6,7 @@ export default function About() {
     const navigate = useNavigate()
     return (
         <>
-            <div className='feature'>FEATURED</div>
+            <div className='feature' id='featured'>FEATURED</div>
             <section className="about" id="about">
                 <div className="image">
                     <img src="https://vn.louisvuitton.com/images/is/image/35100040v_Art_of_Living_May23_DI3?wid=2048" alt="" />
