@@ -63,8 +63,8 @@ export default function Footer() {
                                         </p>
                                     </li>
                                     <li>
-                                        <a href="#!" className="text-dark">
-                                            FAQs
+                                        <a href="" onClick={() => navigate("/contact")} className="text-dark">
+                                            Contact Us
                                         </a>
                                     </li>
                                     <li>

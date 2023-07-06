@@ -48,7 +48,7 @@ export default function Menu() {
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
+                                <i class="fas fa-star"></i>
                                 <span> (50) </span>
                             </div>
                             <div class="price">{convertToUSD(shoes.price)}</div>

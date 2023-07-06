@@ -12,7 +12,7 @@
       "carts": [
         {
           "productId": 17,
-          "quantity": 1,
+          "quantity": 2,
           "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_1.jpeg",
           "name": "Nike",
           "price": 150
@@ -23,13 +23,6 @@
           "url": "../image/louis_vuitton/lv_04.jpeg",
           "name": "Louis Vuitton",
           "price": 1500
-        },
-        {
-          "productId": 18,
-          "quantity": 3,
-          "url": "../image/nike/air_jordan/air_jordan_1/air_jordan_height_2.jpeg",
-          "name": "Nike",
-          "price": 150
         }
       ]
     },

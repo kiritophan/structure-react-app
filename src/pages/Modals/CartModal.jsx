@@ -97,7 +97,7 @@ export default function CartModal() {
           <img src={product.url} alt="" />
         </div>
         <div className="content">
-          <span>Keepall Bandoulière 50</ span>
+          <span>{product.name}</ span>
           <h3 className="title">J-HOPE AND THE KEEPALL</h3>
           <p>{convertToUSD(product.price)}</p>
           <p>Timelessly elegant in emblematic Taiga leather, Louis Vuitton's iconic Keepall holdall,

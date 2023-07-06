@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "./SearchModal.scss"
@@ -44,10 +44,10 @@ function SearchModal() {
       <Button variant="white" onClick={handleShowTop} >
         <div id="search-btn" className="fas fa-search"></div>
       </Button>
-      <Offcanvas style={{ height: '50%' }} show={show} onHide={handleCloseTop} placement="top">
-        <Offcanvas.Header closeButton style={{ display: 'flex', justifyContent: 'center'}}>
+      <Offcanvas style={{ height: '70%' }} show={show} onHide={handleCloseTop} placement="top">
+        <Offcanvas.Header closeButton style={{ display: 'flex', justifyContent: 'center' }}>
           <Offcanvas.Title >
-            <div className="input-group" style={{width: '600px'}}>
+            <div className="input-group" style={{ width: '600px' }}>
               <input
                 className="form-control rounded search-item"
                 aria-label="Search"
@@ -55,6 +55,7 @@ function SearchModal() {
                 onChange={(e) => handleChange(e)}
                 type='text'
                 placeholder='...Search'
+                style={{ height: '50px', borderRadius: '10px'}}
               />
               <button type="button" className="btn btn-outline-dark">
                 search
@@ -62,35 +63,41 @@ function SearchModal() {
             </div>
           </Offcanvas.Title>
         </Offcanvas.Header>
-       
-        <Offcanvas.Body> {showSearch ? (productStore.searchData?.map((item) => 
-        <>
-          <div className='feature'>{item.name}</div>
-          <section className="about" id="about">
-            <div className="image" >
-                <img src={item.url} alt="" style={{ width: '50%'}} />
-            </div>
-              <div className="content" style={{ width: '50%'}}>
-              <div className="icons-container" >
-                <div className="icons" >
-                  <img src="" alt="" />
-                  <h1>SNKRDUNK</h1>
-                  <h2>{item.name}</h2>
+
+        <Offcanvas.Body> {showSearch ? (productStore.searchData?.map((item) =>
+          <>
+            <div className='feature'>{item.name}</div>
+            <section className="about" id="about">
+              <div className="image" >
+                <img src={item.url} alt="" style={{ width: '50%' }} />
+              </div>
+              <div className="content" style={{ width: '30%' }}>
+                <div className="icons-container" >
+                  <div className="icons" >
+                    <img src="" alt="" />
+                    <h1>SNKRDUNK</h1><br></br>
+                    
+                  </div>
+                  <div className="icons" style={{flexDirection: 'column'}} >
+                    <h2>{item.name}</h2>
                     <h2>{convertToUSD(item.price)}</h2>
-                </div>
-                <div className="icons">
-                  <img src="" alt="" />
-                  <h3>{item.des}</h3>
-                </div>
-                <div className="icons">
-                  <img src="" alt="" />
-                    <a onClick={() => navigate(`/product/${item.id}`)}>READ MORE</a>
+                  </div>
+                  <div className="icons">
+                    <img src="" alt="" />
+                    <h3>{item.des}</h3>
+                  </div>
+                  <div className="icons">
+                    <img src="" alt="" />
+                    <a style={{cursor: 'pointer',border: '1px solid black', 
+                    width: '80px', height: '40px', display: 'flex',borderRadius: '10px', 
+                     justifyContent: 'center', alignItems: 'center'}} onClick={() => navigate(`/product/${item.id}`)}>READ MORE</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section> 
-          </>)) : (<></>)}
-        </Offcanvas.Body> 
+            </section>
+          </>)) : (<div className='searchEmpty'>Search is Empty</div>)
+        }
+        </Offcanvas.Body>
       </Offcanvas>
     </>
   );
