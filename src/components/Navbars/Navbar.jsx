@@ -51,28 +51,6 @@ export default function Navbar() {
             <SearchModal /> 
             <Link to="/" className="logo"> <img style={{ width: '50%', height: 'auto' }} src="../image/header-logo-snkrdunk.png" alt="" /> </Link>
             <nav className="navbar">
-                {/* <div className="dropdown">
-                    <button
-                        className="btn btn-primary dropdown-toggle menu-button"
-                        type="button"
-                        id="dropdownMenuButton"
-                        data-mdb-toggle="dropdown"
-                        aria-expanded="false"
-                        style={{ marginTop: '5px' }}
-                    >
-                        Shoes
-                    </button>
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <Link to="/menu/balenciaga"><a className="dropdown-item">Balenciaga</a></Link>
-                        <Link to="/menu/louisVuitton"><a className="dropdown-item">Louis Vuitton</a></Link>
-                        <Link to="/menu/nike"><a className="dropdown-item">Nike</a></Link>
-                        <Link to="/menu/jordan"><a className="dropdown-item">Jordan</a></Link>
-                        <Link to="/menu/adidas"><a className="dropdown-item">Adidas</a></Link>
-                        <Link to="/menu/vans"><a className="dropdown-item">Vans</a></Link>
-                    </ul>
-                </div> */}
-                {/* <a href="#about" onClick={() => navigate("/")}>About</a> */}
-                {/* <a href="#blogs" style={{ position: 'relative' }} onClick={() => navigate("/")}>NEW ARTICLES</a> */}
             </nav>
             <div className="icons d-flex">
                 <div id="menu-btn" className="fas fa-bars"></div>

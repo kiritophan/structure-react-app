@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "./Menu.scss"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { productActions } from '@stores/slices/product.slice';
-import { convertToUSD } from '@mieuteacher/meomeojs';
 import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import SplitButton from 'react-bootstrap/SplitButton';
 
 function MenuModal() {
@@ -18,13 +15,12 @@ function MenuModal() {
     const handleShowTop = () => setShow(true);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
     return (
         <>
             <Button variant="white" onClick={handleShowTop} >
                 <i class="fa-solid fa-bars" style={{ color: '#000000' }}></i>
             </Button>
-            <div className='menuNavbar'> Menu </div>
+            <div className='menuNavbar'><Link style={{color: 'black'}} to= "/" >Menu</Link></div>
             <Offcanvas show={show} onHide={handleCloseTop}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title >
@@ -53,7 +49,7 @@ function MenuModal() {
                                                         id={`dropdown-button-drop-${direction}`}
                                                         drop={direction}
                                                         variant="secondary"
-                                                        title={`Drop ${direction}`}
+                                                        title={`ALL SHOES`}
                                                     >
                                                         <Dropdown.Item eventKey="1"><Link to="/menu/balenciaga"><a className="dropdown-item">Balenciaga</a></Link></Dropdown.Item>
                                                         <Dropdown.Item eventKey="2"><Link to="/menu/louisVuitton"><a className="dropdown-item">Louis Vuitton</a></Link></Dropdown.Item>
@@ -75,10 +71,10 @@ function MenuModal() {
                                     <a href="#blogs" style={{ position: 'relative' }} onClick={() => navigate("/")}>NEW ARTICLES</a>
                                 </div>
                                 <div className="icons">
-                                    <h3><a href="#about" onClick={() => navigate("/")}>SERVICES</a></h3>
+                                    <h3><a href="#footers" onClick={() => navigate("/")}>SERVICES</a></h3>
                                 </div>
                                 <div className="icons">
-                                    <h3>Contact Us</h3>
+                                    <h3><a href="#footers" onClick={() => navigate("/contact")}>CONTACT US</a></h3>
                                 </div>
                             </div>
 
