@@ -12,17 +12,10 @@
       "carts": [
         {
           "productId": 1,
-          "quantity": 3,
+          "quantity": 7,
           "url": "../image/balenciaga/speed/balenciaga_speed_1.jpeg",
           "name": "Balenciaga",
           "price": 1500
-        },
-        {
-          "productId": 27,
-          "quantity": 1,
-          "url": "../image/nike/air_jordan/air_jordan_3/air_jordan_3_3.jpeg",
-          "name": "Nike",
-          "price": 150
         }
       ]
     },

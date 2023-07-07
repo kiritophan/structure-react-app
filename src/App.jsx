@@ -14,7 +14,6 @@ function App() {
         </div>
       </div>
       <div className='app_container'>
-
         {/* Content Router */}
         <Routes>
           <Route path="" element={LazyLoad(() => import("@pages/Homes/Home"))()} />

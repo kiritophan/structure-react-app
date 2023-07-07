@@ -36,21 +36,21 @@ export default function Menu() {
             <div className="box-container">
                 {listShoes.map((shoes, index) =>
                     <div class="box" key={randomId()} onClick={() => navigate(`/product/${shoes.id}`)}>
-                        <a href="#" class="fas fa-heart"></a>
+                        {/* <a href="#" class="fas fa-heart"></a> */}
                         <div class="image">
                             <a><img src={shoes.url} alt="" /></a>
                         </div>
                         <div class="content">
 
                             <h5>{shoes.name}</h5>
-                            <div class="stars">
+                            {/* <div class="stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <span> (50) </span>
-                            </div>
+                            </div> */}
                             <div class="price">{convertToUSD(shoes.price)}</div>
                         </div>
                     </div>

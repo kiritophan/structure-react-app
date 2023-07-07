@@ -11,7 +11,7 @@ export default function Footer() {
                     <section className="mb-4">
                         <a
                             className="btn btn-outline-dark btn-floating m-1"
-                            href="#!"
+                            href="https://www.facebook.com/profile.php?id=100094580164545"
                             role="button"
                         >
                             <i className="fab fa-facebook-f" />

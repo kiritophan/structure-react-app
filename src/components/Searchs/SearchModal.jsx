@@ -70,7 +70,7 @@ function SearchModal() {
             <div className='feature'>{item.name}</div>
             <section className="about" id="about">
               <div className="image" >
-                <img src={item.url} alt="" style={{ width: '50%' }} />
+                <img src={item.url} alt="" style={{ width: '80%' }} />
               </div>
               <div className="content" style={{ width: '30%' }}>
                 <div className="icons-container" >
