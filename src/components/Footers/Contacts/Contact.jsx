@@ -6,6 +6,9 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import Card from "@components/Footers/CardsFooters/CardFooter";
 
+import React from 'react';
+import { MDBInput, MDBCheckbox, MDBBtn, MDBTextArea } from 'mdb-react-ui-kit';
+
 const Contact = () => {
     const form = useRef();
 
@@ -71,39 +74,22 @@ const Contact = () => {
                             referrerpolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
-                    <form ref={form} onSubmit={sendEmail} className="form-container">
-                        <Card cardClass={styles.card}>
-                            <label>Name</label>
-                            <input
-                                type="text"
-                                name="user_name"
-                                placeholder="Full Name"
-                                required
-                            />
-                            <label>Email</label>
-                            <input
-                                type="email"
-                                name="user_email"
-                                placeholder="Your active email"
-                                required
-                            />
-                            <label>Subject</label>
-                            <input
-                                type="text"
-                                name="subject"
-                                placeholder="Subject"
-                                required
-                            />
-                            <label>Message</label>
-                            <textarea
-                                name="message"
-                                cols="30"
-                                rows="10"
-                            ></textarea>
-                            <button className="--btn --btn-success">
-                                Send Message
-                            </button>
-                        </Card>
+                    <form id='form' className='text-center' style={{ width: '100%', maxWidth: '300px', marginLeft: '100px' }} ref={form} onSubmit={sendEmail}>
+                        <h2>Contact Now</h2>
+
+                        <MDBInput label='Name' v-model='name' wrapperClass='mb-4' name="user_name" />
+
+                        <MDBInput type='email' label='Email address' v-model='email' wrapperClass='mb-4' name="user_email" />
+
+                        <MDBInput label='Subject' v-model='subject' wrapperClass='mb-4' name="subject" />
+
+                        <MDBTextArea wrapperClass='mb-4' label='Message' name="message" />
+
+                        <MDBCheckbox wrapperClass='d-flex justify-content-center' label='Send me copy' />
+
+                        <MDBBtn color='primary' block className='my-4'>
+                            Send
+                        </MDBBtn>
                     </form>
 
 
