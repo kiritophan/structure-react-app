@@ -16,6 +16,7 @@ import {
   MDBModalBody,
   MDBModalFooter,
 } from 'mdb-react-ui-kit';
+import { cartsActions } from '../../stores/slices/cart.slice';
 
 
 export default function CartModal() {
@@ -82,10 +83,12 @@ export default function CartModal() {
       if (!flag) {
         carts.push(buyItem)
       }
+      dispatch(cartsActions.updateCartLocal(carts))
       localStorage.setItem("carts", JSON.stringify(carts));
     } else {
       // chưa từng có
       let carts = [buyItem]
+      dispatch(cartsActions.updateCartLocal(carts))
       localStorage.setItem("carts", JSON.stringify(carts));
     }
   }

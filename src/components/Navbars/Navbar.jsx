@@ -20,6 +20,16 @@ export default function Navbar() {
 
     const userLoginStore = useSelector(store => store.userLoginStore)
 
+    const cartItems = useSelector(store => store.userLoginStore.userInfor?.carts || [])
+    console.log("🚀 ~ file: Navbar.jsx:24 ~ Navbar ~ cartItems:", cartItems)
+    
+    const cartTotalQuantity = cartItems.reduce((total, shoes) => {
+        return total + shoes.quantity
+    }, 0)
+
+    //let cartsLocal = JSON.parse(localStorage.getItem("carts") ||  []);
+    //console.log("🚀 ~ file: Navbar.jsx:31 ~ Navbar ~ cartsLocal:", cartsLocal)
+    
     useEffect(() => {
         checkIsLogin();
     }, [])
